@@ -1,0 +1,7 @@
+Started GET "/" for ::1 at 2020-11-30 14:36:58 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nico/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nico/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 36.9ms | Allocations: 409)
+Completed 200 OK in 77ms (Views: 57.8ms | ActiveRecord: 0.0ms | Allocations: 2586)
+
+
