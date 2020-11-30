@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Monthlee</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Abonnements
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Galerie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Informations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <% if user_signed_in? %>
+          <div class="nav-item dropdown">
+              <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="fa fa-user circle mr-1"></span> Mon compte</button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to "Mon profil", user_path(current_user.id), :class =>"dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Éditer mon profil", edit_user_registration_path(current_user.id), :class =>"dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class =>"dropdown-item" %>
+              </div>
+          </div>
+         <% else %> 
+          <div class="nav-item dropdown">
+            <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user circle mr-1"></span> Sign up / Sign in</button>
+            <div class="dropdown-menu">
+              <%= link_to 'Créer son compte', new_user_registration_path, :class =>"dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Se connecter', new_user_session_path, :class =>"dropdown-item" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+  </body>
+</html>
