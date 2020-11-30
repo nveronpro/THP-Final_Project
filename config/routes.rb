@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  devise_for :users
+  devise_for :users, path: '/profile'
 
   resource :users, path: '/profile'
 end
