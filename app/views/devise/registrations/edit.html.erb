@@ -5,6 +5,46 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "First Name", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "Last Name", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :adress %><br />
+      <%= f.text_field :adress, autofocus: true, autocomplete: "Adress", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address_sup %><br />
+      <%= f.text_field :address_sup, autofocus: true, autocomplete: "Adress information", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :door_code %><br />
+      <%= f.text_field :door_code, autofocus: true, autocomplete: "Door code", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city %><br />
+      <%= f.text_field :city, autofocus: true, autocomplete: "City", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :zipcode %><br />
+      <%= f.text_field :zipcode, autofocus: true, autocomplete: "Zipcode", class: "form-control mb-4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %><br />
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "Phone number", class: "form-control mb-4" %>
+    </div>
+
     <div class="form-group">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mb-4" %>
@@ -42,5 +82,3 @@
   <p class="pt-2">Vous n'êtes pas satisfait ? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete, class: "btn btn-danger btn-sm mx-3 mb-2" %></p>
   </div>
 </div>
-
-<%= link_to "Back", :back %>
