@@ -2739,3 +2739,20 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.0ms | Allocations: 8467)
 
 
+Started GET "/" for ::1 at 2020-12-01 14:06:34 +0100
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/_caroussel.html.erb (Duration: 1.1ms | Allocations: 109)
+  Rendered static_pages/_card_price.html.erb (Duration: 0.8ms | Allocations: 129)
+  Rendered static_pages/_jumbotron.html.erb (Duration: 1.9ms | Allocations: 85)
+  Rendered static_pages/_testimonials.html.erb (Duration: 0.8ms | Allocations: 97)
+  Rendered static_pages/_little_banner.html.erb (Duration: 0.9ms | Allocations: 80)
+  Rendered static_pages/_reassurance.html.erb (Duration: 1.0ms | Allocations: 101)
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 2051)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 481)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 200)
+Completed 200 OK in 167ms (Views: 134.9ms | ActiveRecord: 0.0ms | Allocations: 21346)
+
+
