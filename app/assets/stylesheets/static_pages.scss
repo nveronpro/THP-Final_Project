@@ -1,3 +1,17 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.service-column {
+  border-right: 1px solid #495057;
+  text-align: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: -ms-flexbox;
+  }
+
+.service-icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  margin-right: 1.5rem;
+  stroke-width: 2 !important;
+  }
