@@ -394,6 +394,11 @@ h6, .h6 {
   font-size: 0.75rem;
 }
 
+a.no-style {
+  text-decoration: none;
+  color: #55595c;
+}
+
 .lead {
   font-size: 1.09375rem;
   font-weight: 300;
