@@ -1,3 +1,44 @@
+<div id="forgot-password-form">
+  <div class="container justify-content-center">
+    <div class="row text-center">
+      <div class="col-md-6 offset-md-3"-->
+        <div class="form-signin my-5">
+          <h1 class="h3 mb-3 font-weight-normal">Mot de passe oublié ?</h1><br>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+
+            <div class="field">
+              <%= f.label :password, "Nouveau mot de passe" %><br />
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control mb-4" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation, "Confirm new password" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+
+              <div class="actions">
+                <%= f.submit "Changer mon password", class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
+            <br>git 
+            <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <h2>Change your password</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
