@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, path: '/profile'
+  root 'static_pages#index'
+  resource :users, path: '/profile'
 end
