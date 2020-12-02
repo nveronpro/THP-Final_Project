@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :items
   devise_for :users, path: '/profile'
   root 'static_pages#index'
