@@ -13,6 +13,8 @@ CartOrder.destroy_all
 Order.destroy_all
 OrderItem.destroy_all
 Item.destroy_all
+SubCategory.destroy_all
+SubType.destroy_all
 
 
 
@@ -31,6 +33,8 @@ SubType.create(specification: "Petit")
 
     3.times do
         item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 2), description: "hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: SubCategory.all.sample, sub_type: SubType.all.sample)
+        item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
+
         OrderItem.create(order: order_tmp, item: item_tmp)
     end
     CartOrder.create(cart: cart_tmp, order: order_tmp)
