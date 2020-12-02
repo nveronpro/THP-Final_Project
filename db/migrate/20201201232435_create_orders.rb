@@ -3,9 +3,9 @@ class CreateOrders < ActiveRecord::Migration[6.0]
     create_table :orders do |t|
       t.datetime :start_date
       t.datetime :end_date
-      t.integer :duration
       t.boolean :skip_month?
       
+      t.belongs_to :item
       t.timestamps
     end
   end
