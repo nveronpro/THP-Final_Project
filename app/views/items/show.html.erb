@@ -1,9 +1,11 @@
 <div class="my-3">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-      <li class="breadcrumb-item"><a href="#">Abonnements</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Titre du produit</li>
+      <li class="breadcrumb-item">
+        <%= link_to "Accueil", acceuil_path %>
+      </li>
+      <li class="breadcrumb-item"><%= link_to "Abonemments", abonemments_path %></li>
+      <li class="breadcrumb-item active" aria-current="page">Produit</li>
     </ol>
   </nav>
 </div>
@@ -17,7 +19,6 @@
           <%= image_tag @item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
         <%else%>
           <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
-
         <%end%>
           <a href="#!">
             <div class="mask waves-effect waves-light"></div>
@@ -27,9 +28,9 @@
       </div>
       <div class="col-md-7">
 
-        <h5>Abonnement 12 mois "Happiness"</h5>
+        <h5>Abonnement <%= @item.sub_category.duration %> mois</h5>
         <hr class="hr-product my-4">
-        <p class="mb-2 text-muted text-uppercase small">Storage</p>
+        <p class="mb-2 text-muted text-uppercase small"><%= @item.title %></p>
         <ul class="rating">
           <li class="pr-1">
             <i class="fas fa-star fa-sm text-primary"></i>
@@ -47,9 +48,8 @@
             <i class="far fa-star fa-sm text-primary"></i>
           </li>
         </ul>
-        <p><span class="mr-1"><strong>79.99€</strong></span></p>
-        <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-          error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam.</p>
+        <p><span class="mr-1"><strong><%= @item.price %>€</strong></span></p>
+        <p class="pt-1"><%= @item.description %></p>
         <div class="table-responsive">
           <table class="table table-sm table-borderless mb-0">
             <tbody>
@@ -59,7 +59,7 @@
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Types</strong></th>
-                <td>Seagrass</td>
+                <td><%= @item.sub_type.specification %></td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Couleurs</strong></th>
@@ -82,119 +82,30 @@
         <div class="row mt-5 mb-4">
 
           <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
+          <% 4.times do %>
+            <% item = Item.all.sample%>
+            <div class="col-md-6 col-lg-3 mb-4">
               <div class="">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(66).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask waves-effect waves-light"></div>
-                </a>
+                <div class="">
+                  <%if item.avatar.attached?%>
+                    <%= image_tag item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
+                  <%else%>
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                  <%end%>
+                  <a href="#!">
+                    <div class="mask waves-effect waves-light"></div>
+                  </a>
+                </div>
+                <div class="text-center pt-4">
+                  <h5><%= item.title %></h5>
+                  <h6 class="mb-3"><%= item.price %>€</h6>
+                  <%= link_to "Voir plus", item_path(item) , class:"btn btn-info btn-sm px-3 stretched-link" %>
+                </div>
               </div>
-
-              <div class="text-center pt-4">
-
-                <h5>Seagrass basket - M</h5>
-                <h6 class="mb-3">23.00€</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1">Ajouter au panier</button>
-                <button type="button" class="btn btn-info btn-sm px-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="En savoir plus">Voir plus</button>
-
-              </div>
-
             </div>
-            <!-- Card -->
 
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(23).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask waves-effect waves-light"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5>Seagrass basket - L</h5>
-                <h6 class="mb-3">25.00€</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1">Ajouter au panier</button>
-                <button type="button" class="btn btn-info btn-sm px-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="En savoir plus">Voir plus</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(63).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask waves-effect waves-light"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5>Flat seagrass basket</h5>
-                <h6 class="mb-3">20.00€</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1">Ajouter au panier</button>
-                <button type="button" class="btn btn-info btn-sm px-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="En savoir plus">Voir plus</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(59).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask waves-effect waves-light"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5>Small wicker basket</h5>
-                <h6 class="mb-3">9.00€</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1">Ajouter au panier</button>
-                <button type="button" class="btn btn-info btn-sm px-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="En savoir plus">Voir plus</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
+          <% end %>
         </div>
-        <!-- Grid row -->
 
       </section>
   </div>
