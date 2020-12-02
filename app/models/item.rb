@@ -8,4 +8,6 @@ class Item < ApplicationRecord
 
   belongs_to :sub_category
   belongs_to :sub_type
+
+  has_one_attached :avatar
 end
