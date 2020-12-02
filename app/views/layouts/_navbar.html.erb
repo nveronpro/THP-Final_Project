@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/abonnements">Abonnements
+            <a class="nav-link" href="/abonemments">Abonnements
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -21,12 +21,18 @@
             <a class="nav-link" href="/galerie">Galerie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/info">Informations</a>
+            <a class="nav-link" href="/informations">Informations</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
         </ul>
+        <div class="nav-item">
+          <a href="#!" class="nav-link navbar-link-2">
+            <span class="badge badge-pill badge-secondary">5</span>
+            <i class="fas fa-shopping-cart fa-lg mr-2 cart-nav"></i>
+          </a>
+        </div>
         <% if user_signed_in? %>
           <div class="nav-item dropdown">
               <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">

@@ -404,6 +404,14 @@ a.no-style {
   font-weight: 300;
 }
 
+.cart-nav {
+    color: hsla(0, 0%, 100%, 0.8);
+}
+
+.cart-nav:hover {
+  color: #fff;
+}
+
 .display-1 {
   font-size: 6rem;
   font-weight: 300;
