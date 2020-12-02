@@ -5,6 +5,8 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.text :description
       t.decimal :price
 
+      t.belongs_to :sub_category
+      t.belongs_to :sub_type
       t.timestamps
     end
   end

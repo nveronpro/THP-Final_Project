@@ -5,3 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.destroy_all
+Cart.destroy_all
+CartOrder.destroy_all
+Order.destroy_all
+OrderItem.destroy_all
+Item.destroy_all
+
+
+
+user_tmp = User.create(email: "arrvac@gmail.con", password: "password")
+cart_tmp = Cart.create(user: user_tmp)
+
+SubCategory.create(duration: 3)
+SubCategory.create(duration: 6)
+SubCategory.create(duration: 9)
+SubType.create(specification: "ENORME")
+SubType.create(specification: "MOYEN")
+SubType.create(specification: "Petit")
+
+3.times do
+    order_tmp = Order.create()
+
+    3.times do
+        item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 2), description: "hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: SubCategory.all.sample, sub_type: SubType.all.sample)
+        OrderItem.create(order: order_tmp, item: item_tmp)
+    end
+    CartOrder.create(cart: cart_tmp, order: order_tmp)
+end
+
+
+

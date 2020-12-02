@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_134536) do
+ActiveRecord::Schema.define(version: 2020_12_01_235615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_orders", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_orders_on_cart_id"
+    t.index ["order_id"], name: "index_cart_orders_on_order_id"
+  end
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
@@ -27,6 +36,40 @@ ActiveRecord::Schema.define(version: 2020_12_01_134536) do
     t.string "title"
     t.text "description"
     t.decimal "price"
+    t.bigint "sub_category_id"
+    t.bigint "sub_type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sub_category_id"], name: "index_items_on_sub_category_id"
+    t.index ["sub_type_id"], name: "index_items_on_sub_type_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_order_items_on_item_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "duration"
+    t.boolean "skip_month?"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sub_categories", force: :cascade do |t|
+    t.integer "duration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sub_types", force: :cascade do |t|
+    t.string "specification"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
