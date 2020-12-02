@@ -30,6 +30,22 @@
         <label>Prix</label>
         <%= f.text_field :price, class: 'form-control'%>
     </div>
+
+    <div class="form-group">
+        <label>Catégorie de l'article </label>
+        <%= f.select :sub_category_id, SubCategory.pluck(:duration, :id), :prompt => 'Choose the number of months', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label>Catégorie de l'article </label>
+        <%= f.select :sub_type_id, SubType.pluck(:specification, :id), :prompt => 'Choose the size', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label> Image </label>
+         <%= f.file_field :avatar, class: 'form-control'%>
+    </div>
+    
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Valider</button>
     </div>
