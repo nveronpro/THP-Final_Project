@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :items
 
   get '/contact', to: 'static_pages#contact'
-  get '/histoire', to: 'static_pages#about'
+  get '/notre-histoire', to: 'static_pages#about'
   get '/informations', to: 'static_pages#info'
   get '/galerie', to: 'static_pages#galerie'
   resources :carts
