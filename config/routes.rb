@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/histoire', to: 'static_pages#about'
   get '/informations', to: 'static_pages#info'
   get '/galerie', to: 'static_pages#galerie'
+  resources :carts
 end
