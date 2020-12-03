@@ -68,9 +68,8 @@
             </tbody>
           </table>
         </div>
-        <hr>
-        <button type="button" class="btn btn-primary btn-md mr-1 mb-2 waves-effect waves-light">Buy now</button>
-        <button type="button" class="btn btn-light btn-md mr-1 mb-2 waves-effect waves-light"><i class="fas fa-shopping-cart ml-2 mr-2"></i>Add to cart</button>
+        <hr>      
+        <%= link_to panier_path(@item), class:"btn btn-light btn-md mr-1 mb-2", method: "POST" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Add to cart<% end %>      
       </div>
     </div>
 

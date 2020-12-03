@@ -9,17 +9,19 @@
 
 User.destroy_all
 Cart.destroy_all
-CartOrder.destroy_all
+#CartOrder.destroy_all  #supprimer
 Order.destroy_all
-OrderItem.destroy_all
+#OrderItem.destroy_all  #supprimer
 Item.destroy_all
 SubCategory.destroy_all
 SubType.destroy_all
+ItemCart.destroy_all
+OrderUser.destroy_all
 
 
 
-user_tmp = User.create(email: "arrvac@gmail.con", password: "password")
-cart_tmp = Cart.create(user: user_tmp)
+user_tmp = User.create(email: "arrvac@gmail.com", password: "password")
+Cart.create(user: user_tmp)
 
 SubCategory.create(duration: 3)
 SubCategory.create(duration: 6)
@@ -41,12 +43,17 @@ end
 
 
 
-3.times do
-    order_tmp = Order.create()
+User.all.each do |user|
     3.times do
-        OrderItem.create(order: order_tmp, item: Item.all.sample)
+        item_tmp = Item.all.sample
+        order_tmp = Order.create(item: item_tmp, start_date: Time.new, end_date: Time.new)
+        OrderUser.create(order: order_tmp, user: user)
+        order_tmp = Order.create(item: item_tmp, start_date: Time.new(2018, 1, 1), end_date: Time.new(2018, 1, 1))
+        OrderUser.create(order: order_tmp, user: user)
     end
-    CartOrder.create(cart: cart_tmp, order: order_tmp)
+    3.times do
+        ItemCart.create(item: Item.all.sample, cart: user.cart)
+    end
 end
 
 
