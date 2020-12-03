@@ -14,7 +14,7 @@
             <div class="card mb-4">
               <div class="card-body">
 
-                <h5 class="mb-4">Panier (<span>2</span> items)</h5>
+                <h5 class="mb-4">Panier (<span><%= @cart.items.length %></span> items)</h5>
                 <% @cart.items.each do |item_select|%>
                 <div class="row mb-4">
                   <div class="col-md-5 col-lg-3 col-xl-3">
@@ -90,7 +90,7 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                     Sous-total
-                    <span>53.98€</span>
+                    <span><%= @cart.total_price %>€</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                     Livraison

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/notre-histoire', to: 'static_pages#about'
   get '/informations', to: 'static_pages#info'
   get '/galerie', to: 'static_pages#galerie'
-  resources :carts
+  resource :carts
   get '/acceuil', to: 'static_pages#index'
   get '/abonemments', to: 'items#index'
   post '/item_carts/:id', to: 'item_carts#create', as: 'panier'

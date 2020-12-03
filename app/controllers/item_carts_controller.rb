@@ -1,8 +1,5 @@
 class ItemCartsController < ApplicationController
   before_action :find_item, only: [:create, :destroy]
-  def new
-    @itemcart = ItemCart.new
-  end
     
   def create
     cart = current_user.cart
@@ -13,12 +10,13 @@ class ItemCartsController < ApplicationController
     else 
       flash[:warning] = "Produit non ajouté"
       redirect_to root_path
+    end
   end
 
   def destroy
-    @itemcart = find_cartitem.sample
+    @itemcart = find_itemcart.sample
     @itemcart.delete
-    redirect_to cart_path(current_user)
+    redirect_to carts_path
   end
 
   private 
@@ -27,9 +25,10 @@ class ItemCartsController < ApplicationController
       @item = Item.find(params[:id])
   end
 
-  def find_cartitem
-      ItemCart.all.each do |cart|
+  def find_itemcart
+    ItemCart.all.each do |cart|
         @itemcart = cart if (cart.id == current_user.cart && cart.item == find_item)
-      end
-  end
+    end
+end
+
 end
