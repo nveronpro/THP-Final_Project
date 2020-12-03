@@ -20,8 +20,8 @@ OrderUser.destroy_all
 
 
 
-user_tmp = User.create(email: "arrvac@gmail.con", password: "password")
-cart_tmp = Cart.create(user: user_tmp)
+user_tmp = User.create(email: "arrvac@gmail.com", password: "password")
+Cart.create(user: user_tmp)
 
 SubCategory.create(duration: 3)
 SubCategory.create(duration: 6)
