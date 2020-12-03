@@ -2,9 +2,9 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <%= link_to "Accueil", acceuil_path %>
+        <%= link_to "Accueil", accueil_path %>
       </li>
-      <li class="breadcrumb-item"><%= link_to "Abonemments", abonemments_path %></li>
+      <li class="breadcrumb-item"><%= link_to "Abonnements", abonnements_path %></li>
       <li class="breadcrumb-item active" aria-current="page">Produit</li>
     </ol>
   </nav>
@@ -68,8 +68,12 @@
             </tbody>
           </table>
         </div>
-        <hr>      
-        <%= link_to panier_path(@item), class:"btn btn-light btn-md mr-1 mb-2", method: "POST" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Add to cart<% end %>      
+        <hr>
+        <% if user_signed_in? %>      
+          <%= link_to panier_path(@item), class:"btn btn-light btn-md mr-1 mb-2", method: "POST" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Add to cart<% end %>      
+        <% else %>
+          <%= link_to 'Merci de vous vous connecter si vous voulez ajouter celci a votre panier.', new_user_session_path %>
+        <% end %>
       </div>
     </div>
 
