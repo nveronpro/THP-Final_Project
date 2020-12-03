@@ -45,7 +45,10 @@ end
 
 User.all.each do |user|
     3.times do
-        order_tmp = Order.create(item: Item.all.sample)
+        item_tmp = Item.all.sample
+        order_tmp = Order.create(item: item_tmp, start_date: Time.new, end_date: Time.new)
+        OrderUser.create(order: order_tmp, user: user)
+        order_tmp = Order.create(item: item_tmp, start_date: Time.new(2018, 1, 1), end_date: Time.new(2018, 1, 1))
         OrderUser.create(order: order_tmp, user: user)
     end
     3.times do
