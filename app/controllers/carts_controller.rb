@@ -19,19 +19,10 @@ class CartsController < ApplicationController
     @cart = find_cart
   end
 
-  def ask_email
-    @cart = find_cart
-    @order = Order.create(user_id: current_user.id)
-    @cart.items.each do |item|
-      AssociateOrderItem.create(order: @order, item: item)
-    end
-    @cart.items.destroy_all
-  end
-
   private
 
   def carts_params
-    params.require(:cart).permit(:adress, :adress_sup, :ville, :code)
+    params.require(:cart).permit(:adress, :adress_sup, :ville, :zipcode, :door_code, :phone_number)
   end
 
   def find_cart

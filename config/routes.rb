@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :orders
   resources :items
+  resources :item_carts
 
   get '/contact', to: 'static_pages#contact'
   get '/notre-histoire', to: 'static_pages#about'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :carts
   get '/acceuil', to: 'static_pages#index'
   get '/abonemments', to: 'items#index'
+  post '/item_carts/:id', to: 'item_carts#create', as: 'panier'
 
   root 'static_pages#index'
 end
