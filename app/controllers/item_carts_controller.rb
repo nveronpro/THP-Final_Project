@@ -1,18 +1,18 @@
 class ItemCartsController < ApplicationController
+  before_action :find_item, only: [:create, :destroy]
   def new
     @itemcart = ItemCart.new
   end
     
   def create
-    @cart = current_user.cart
-    @itemcart = @cart.items<<find_item
-    #if @itemcart.save
-      #flash[:success] = "Produit ajouté au panier"
-      #redirect_to '/'
-    #else 
-      #flash[:warning] = "Produit non ajouté"
-      #redirect_to '/'
-    #end
+    cart = current_user.cart
+    cart.items << @item
+    if cart.save
+      flash[:success] = "Produit ajouté au panier"
+      redirect_to root_path
+    else 
+      flash[:warning] = "Produit non ajouté"
+      redirect_to root_path
   end
 
   def destroy
