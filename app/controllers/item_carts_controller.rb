@@ -29,6 +29,5 @@ class ItemCartsController < ApplicationController
     ItemCart.all.each do |cart|
         @itemcart = cart if (cart.id == current_user.cart && cart.item == find_item)
     end
-end
-
+  end
 end
