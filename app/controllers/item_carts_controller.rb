@@ -13,6 +13,7 @@ class ItemCartsController < ApplicationController
     else 
       flash[:warning] = "Produit non ajouté"
       redirect_to root_path
+    end
   end
 
   def destroy
