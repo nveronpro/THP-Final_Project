@@ -109,7 +109,21 @@
                 <% if @cart.total_price <= 0 %>
                   <p>Votre panier est vide</p>
                 <% else %>
-                  <%= button_to 'Payer maintenant', checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary" %>
+                  <% if current_user.adress.blank? || current_user.city.blank? || current_user.zipcode.blank? %>
+                    <h6 >Address actuelle:</h6>
+                    Adresse: <i><%= current_user.adress %></i><br>
+                    <% if current_user.address_sup.blank? == false %>
+                      Adress complementaire: <i><%= current_user.address_sup %></i><br>
+                    <% end %>
+                    <% if current_user.door_code.blank? == false %>
+                      Code de porte: <i><%= current_user.door_code %></i><br>
+                    <% end %>
+                    Ville: <i><%= current_user.city %></i><br>
+                    Code postale: <i><%= current_user.zipcode %></i><br><br>
+                    <%= link_to 'Complétez votre profile', edit_users_path, class: "btn btn-danger" %>
+                  <% else %>
+                    <%= button_to 'Payer maintenant', checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary" %>
+                  <% end %>
                 <% end %>
                 <!-- button_to "procéder au paiement", new_charge_path, class: "btn btn-primary btn-block", method: "get" -->
 
