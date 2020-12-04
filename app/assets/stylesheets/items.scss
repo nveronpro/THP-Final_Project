@@ -1,0 +1,15 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.hr-product {
+  width: 20%;
+  border: 1px solid var(--primary);
+  margin: 0;
+}
+
+ul.rating {
+  padding: 0;
+  color: #ffa000;
+  list-style-type: none;
+  display: flex;
+  }

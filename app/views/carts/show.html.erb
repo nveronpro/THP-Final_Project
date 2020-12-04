@@ -1,0 +1,145 @@
+<main>
+    <div class="container">
+
+      <!--Section: Block Content-->
+      <section class="mt-5 mb-4">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-8">
+
+            <!-- Card -->
+            <div class="card mb-4">
+              <div class="card-body">
+
+                <h5 class="mb-4">Panier (<span><%= @cart.items.length %></span> items)</h5>
+                <% @cart.items.each do |item_select|%>
+                <div class="row mb-4">
+                  <div class="col-md-5 col-lg-3 col-xl-3">
+                    <div class="mb-3 mb-md-0">
+                    <% if item_select.avatar.attached? %>
+                        <%= image_tag item_select.avatar, class: "img-fluid w-100" %>
+                    <% else %>
+                        <%= image_tag "https://pajulahti.com/wp-content/uploads/2017/04/500x500.jpeg", style: "width: 50px", :crop => :fill, class: "img-fluid w-100" %>
+                    <% end %>              
+                    </div>
+                  </div>
+                  <div class="col-md-7 col-lg-9 col-xl-9">
+                    <div>
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <h5><%= link_to item_select.title, item_path(item_select.id) %></h5>
+                          <p class="mb-3 text-muted text-uppercase small">Shirt - blue</p>
+                          <p class="mb-2 text-muted text-uppercase small">Color: blue</p>
+                          <p class="mb-3 text-muted text-uppercase small"><%= item_select.description %></p>
+                        </div>                        
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <i class="fas fa-trash-alt mr-1"></i> <%= link_to 'Supprimer le produit', item_cart_path(item_select), method: :delete, class: "card-link-secondary small text-uppercase mr-3" %>
+                        </div>
+                        <p class="mb-0"><span><strong><%= item_select.price %>€</strong></span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="mb-4">
+                <% end %>                      
+              </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="card mb-4">
+              <div class="card-body">
+
+                <h5 class="mb-4">Livraison prévue :</h5>
+
+                <p class="mb-0">Premier mercredi du mois</p>
+              </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="card mb-4">
+              <div class="card-body">
+
+                <h5 class="mb-4">Nous acceptons</h5>
+
+                <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg" alt="Visa">
+                <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg" alt="American Express">
+                <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg" alt="Mastercard">            
+              </div>
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4">
+
+            <!-- Card -->
+            <div class="card mb-4">
+              <div class="card-body">
+
+                <h5 class="mb-3">Montant total</h5>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Sous-total
+                    <span><%= @cart.total_price %>€</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Livraison
+                    <span>Offerte</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <div>
+                      <strong>Montant total</strong>
+                      <strong>
+                        <p class="mb-0">(TVA inclue)</p>
+                      </strong>
+                    </div>
+                    <span><strong><%= @cart.total_price %>€</strong></span>
+                  </li>
+                </ul>
+
+                <!-- button_to "procéder au paiement", new_charge_path, class: "btn btn-primary btn-block", method: "get" -->
+
+                 <%= form_tag charges_path do %>
+                  <article>
+                    <% if flash[:error].present? %>
+                      <div id="error_explanation">
+                        <p><%= flash[:error] %></p>
+                      </div>
+                    <% end %>  
+                  </article>
+                  <div class="row mb-5">
+                    <div class="col-md-12 mt-4 text-center">
+                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                              data-description="A month's subscription"
+                              data-amount="<%= @amount%> "
+                              data-locale="auto"
+                              data-currency="eur">
+                      </script>
+                    </div>
+                  </div>
+                <% end %> 
+              </div>
+            </div>    
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Block Content-->
+
+    </div>
+  </main>

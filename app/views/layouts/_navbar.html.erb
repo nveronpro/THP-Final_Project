@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Harry Cover</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Abonnements', abonnements_path, :class =>"nav-link" %>
+            <span class="sr-only">(Abonnements)</span>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Notre Histoire', about_path, :class =>"nav-link" %>
+            <span class="sr-only">(Qui sommes nous)</span>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Informations', galerie_path, :class =>"nav-link" %>
+            <span class="sr-only">(Informations supplemantaire)</span>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Contact', contact_path, :class =>"nav-link" %>
+            <span class="sr-only">(Contact)</span>
+          </li>
+        </ul>
+        <% if user_signed_in? %>
+          <div class="nav-item">
+            <a href="/carts" class="nav-link navbar-link-2">
+              <span class="badge badge-pill badge-secondary"><%= current_user.cart.items.length %></span>
+              <i class="fas fa-shopping-cart fa-lg mr-2 cart-nav"></i>
+            </a>
+          </div>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="nav-item dropdown">
+              <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="fa fa-user circle mr-1"></span> Mon compte</button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to "Mon profil", users_path, :class =>"dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Éditer mon profil", edit_user_registration_path(current_user.id), :class =>"dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class =>"dropdown-item" %>
+              </div>
+          </div>
+         <% else %> 
+          <div class="nav-item dropdown">
+            <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user circle mr-1"></span> Sign up / Sign in</button>
+            <div class="dropdown-menu">
+              <%= link_to 'Créer son compte', new_user_registration_path, :class =>"dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Se connecter', new_user_session_path, :class =>"dropdown-item" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+  </body>
+</html>

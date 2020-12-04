@@ -14,7 +14,7 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+# Stripe gem for Stripe paiement
+gem 'stripe', '~> 5.25'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,3 +55,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'table_print'
+gem 'faker'
+gem "aws-sdk-s3", require: false

@@ -1,0 +1,97 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 p-5">
+            <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-all-list" data-toggle="list" href="#list-all" role="tab" aria-controls="all">All</a>
+            <a class="list-group-item list-group-item-action" id="list-hebdo-list" data-toggle="list" href="#list-hebdo" role="tab" aria-controls="hebdo">Hebdomadaire</a>
+            <a class="list-group-item list-group-item-action" id="list-mensu-list" data-toggle="list" href="#list-mensu" role="tab" aria-controls="mensu">Mensuel</a>
+            </div>
+        </div>
+        <div class="col-9 p-5">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-all" role="tabpanel" aria-labelledby="list-all-list">
+                    <% SubCategory.all.each do |category| %>
+                        <div class="card text-center mb-5">
+                            <div class="card-body">
+                                <h5 class="card-title">Voici nos offres sur une durée de <%= category.duration %> mois</h5>
+                                <% category.items.each_slice(3) do |items| %>
+                                    <div class="card-deck mb-5">
+                                        <% items.each do |item| %>
+                                            <div class="card">
+                                                <%if item.avatar.attached?%>
+                                                    <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                                <%else%>
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                                                <%end%>
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><%= item.title %></h5>
+                                                    <p class="card-text"><%= item.price %> €</p>
+                                                    <p class="card-text">Reçois pendant <%= item.sub_category.duration %> mois de facons <%= item.sub_type.specification %> un panier <%= item.size %></p>
+                                                    <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
+                                                </div>
+                                            </div>
+                                        <% end %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="tab-pane fade" id="list-hebdo" role="tabpanel" aria-labelledby="list-hebdo-list">
+                    <% SubCategory.all.each do |category| %>
+                        <div class="card text-center mb-5">
+                            <div class="card-body">
+                                <h5 class="card-title">Voici nos offres sur une durée de <%= category.duration %> mois</h5>
+                                <div class="card-deck">
+                                <% category.items.each do |item| %>
+                                    <% if item.sub_type.specification == "Hebdomadaire" %>
+                                        <div class="card">
+                                            <%if item.avatar.attached?%>
+                                                <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                            <%else%>
+                                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                                            <%end%>
+                                            <div class="card-body">
+                                            <h5 class="card-title"><%= item.title %></h5>
+                                            <p class="card-text"><%= item.description %></p>
+                                            <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
+                                            </div>
+                                        </div>
+                                    <% end %>
+                                <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="tab-pane fade" id="list-mensu" role="tabpanel" aria-labelledby="list-mensu-list">
+                    <% SubCategory.all.each do |category| %>
+                        <div class="card text-center mb-5">
+                            <div class="card-body">
+                                <h5 class="card-title">Voici nos offres sur une durée de <%= category.duration %> mois</h5>
+                                <div class="card-deck">
+                                <% category.items.each do |item| %>
+                                    <% if item.sub_type.specification == "Mensuel" %>
+                                        <div class="card">
+                                            <%if item.avatar.attached?%>
+                                                <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                            <%else%>
+                                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                                            <%end%>
+                                            <div class="card-body">
+                                            <h5 class="card-title"><%= item.title %></h5>
+                                            <p class="card-text"><%= item.description %></p>
+                                            <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
+                                            </div>
+                                        </div>
+                                    <% end %>
+                                <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
