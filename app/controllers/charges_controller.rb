@@ -3,13 +3,12 @@ class ChargesController < ApplicationController
   
   def new
     @user = current_user
-    @amount = current_user.cart.items.pluck(:price).sum.to_i
   end
   
   def create
     # Amount in cents
     @cart = current_user.cart
-    @amount = @cart.items.pluck(:price).sum.to_i
+    @amount = @cart.items.pluck(:price).sum.to_i * 100
   
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -23,9 +22,10 @@ class ChargesController < ApplicationController
       currency: 'eur',
     })
 
-  @order = OrderUser.create(user_id: current_user.id)
+
   @cart.items.each do |item|
-  Order.create(order: @order, item: item)
+    order = Order.create(item: item)
+    OrderUser.create(user_id: current_user.id, order: order)
   end
   @cart.items.destroy_all
   
