@@ -26,15 +26,20 @@
             <tbody>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Start date:</strong></th>
-                <td><%= @order.start_date %></td>
+                <td><%= @order.start_date.strftime("%F") %></td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>End date:</strong></th>
-                <td><%= @order.end_date %></td>
+                <td><%= @order.end_date.strftime("%F") %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Temp restant:</strong></th>
+                <td>Il vous reste <%= (@order.end_date.year * 12 + @order.end_date.month) - (@order.start_date.year * 12 + @order.start_date.month) %> mois</td>
+
               </tr>
             </tbody>
           </table>
-          <br><br><br><br><br><br><br>
+          <br><br><br><br><br><br>
           <%= link_to "Skip the next Month", "#", :class =>"btn btn-primary" %>
         </div>
         <hr>

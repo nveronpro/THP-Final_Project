@@ -24,7 +24,7 @@ class ChargesController < ApplicationController
 
 
   @cart.items.each do |item|
-    order = Order.create(item: item)
+    order = Order.create(item: item, start_date: DateTime.now, end_date: DateTime.now + item.sub_category.duration.months)
     OrderUser.create(user_id: current_user.id, order: order)
   end
   @cart.items.destroy_all
