@@ -55,15 +55,15 @@
             <tbody>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Taille</strong></th>
-                <td>Different sizes</td>
+                <td><%= @item.size %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Category</strong></th>
+                <td><%= @item.sub_category.duration %> mois</td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Types</strong></th>
                 <td><%= @item.sub_type.specification %></td>
-              </tr>
-              <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Couleurs</strong></th>
-                <td>Sand</td>
               </tr>
             </tbody>
           </table>

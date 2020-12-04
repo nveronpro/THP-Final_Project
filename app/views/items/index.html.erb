@@ -25,7 +25,8 @@
                                                 <%end%>
                                                 <div class="card-body">
                                                     <h5 class="card-title"><%= item.title %></h5>
-                                                    <p class="card-text"><%= item.description %></p>
+                                                    <p class="card-text"><%= item.price %> €</p>
+                                                    <p class="card-text">Reçois pendant <%= item.sub_category.duration %> mois de facons <%= item.sub_type.specification %> un panier <%= item.size %></p>
                                                     <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
                                                 </div>
                                             </div>
