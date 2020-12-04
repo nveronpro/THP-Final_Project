@@ -2,6 +2,7 @@ class ItemCartsController < ApplicationController
   before_action :find_item, only: [:create, :destroy]
     
   def create
+    return if current_user.cart.items.find_by(id: @item.id)
     cart = current_user.cart
     cart.items << @item
     if cart.save
