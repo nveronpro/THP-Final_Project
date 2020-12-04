@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :charges
 
   get '/contact', to: 'static_pages#contact'
-  get '/notre-histoire', to: 'static_pages#about'
+  get '/about', to: 'static_pages#about'
   get '/informations', to: 'static_pages#info'
   get '/galerie', to: 'static_pages#galerie'
   resource :carts
