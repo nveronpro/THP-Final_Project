@@ -6,7 +6,7 @@ class ItemCartsController < ApplicationController
     cart.items << @item
     if cart.save
       flash[:success] = "Produit ajouté au panier"
-      redirect_to root_path
+      redirect_to carts_path
     else 
       flash[:warning] = "Produit non ajouté"
       redirect_to root_path
