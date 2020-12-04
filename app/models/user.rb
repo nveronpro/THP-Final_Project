@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  after_create :cart_create
-  after_create :welcome_send
+  after_create :cart_create, :welcome_send
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
