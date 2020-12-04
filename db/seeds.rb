@@ -31,17 +31,6 @@ SubType.create(specification: "Hebdomadaire")
 SubType.create(specification: "Mensuel")
 
 
-SubCategory.all.each do |category|
-    3.times do 
-        item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 1), description: "Hebdomadaire hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: category, sub_type: SubType.all.first, size: "350g")
-        item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
-
-        item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 1), description: "Mensuel hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: category, sub_type: SubType.all.last, size: "350g")
-        item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
-    end
-end
-
-
 
 User.all.each do |user|
     3.times do
