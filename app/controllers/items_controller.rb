@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:title, :description, :price, :sub_category_id, :sub_type_id, :avatar)
+    params.require(:item).permit(:title, :description, :price, :sub_category_id, :sub_type_id, :avatar, :size)
   end
 
   def find_item

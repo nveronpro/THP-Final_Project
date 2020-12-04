@@ -14,8 +14,7 @@ class ItemCartsController < ApplicationController
   end
 
   def destroy
-    @itemcart = find_itemcart.sample
-    @itemcart.delete
+    current_user.cart.items.destroy(@item)
     redirect_to carts_path
   end
 
@@ -23,11 +22,5 @@ class ItemCartsController < ApplicationController
 
   def find_item
       @item = Item.find(params[:id])
-  end
-
-  def find_itemcart
-    ItemCart.all.each do |cart|
-        @itemcart = cart if (cart.id == current_user.cart && cart.item == find_item)
-    end
   end
 end
