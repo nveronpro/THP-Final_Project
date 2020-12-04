@@ -1,14 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="my-5">
+    <div class="row">
+      <div class="col-md-5 mb-4 mb-md-0">
 
-<p>
-  <strong>Start date:</strong>
-  <%= @order.start_date %>
-</p>
+        <div class="">
+        <%if @order.item.avatar.attached?%>
+          <%= image_tag @order.item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
+        <%else%>
+          <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+        <%end%>
+          <a href="#!">
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
 
-<p>
-  <strong>End date:</strong>
-  <%= @order.end_date %>
-</p>
+      </div>
+      <div class="col-md-7">
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+        <h5>Abonnement <%= @order.item.sub_category.duration %> mois</h5>
+        <hr class="hr-product my-4">
+        <p class="mb-2 text-muted text-uppercase small"><%= @order.item.title %></p>
+        <p class="pt-1"><%= @order.item.description %></p>
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Start date:</strong></th>
+                <td><%= @order.start_date %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>End date:</strong></th>
+                <td><%= @order.end_date %></td>
+              </tr>
+            </tbody>
+          </table>
+          <br><br><br><br><br><br><br>
+          <%= link_to "Skip the next Month", "#", :class =>"btn btn-primary" %>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
