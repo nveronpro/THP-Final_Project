@@ -70,23 +70,25 @@
                 <div class="card-body">
                     <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Current</i>orders</h6>
                     <div class="row">
-                        <% @user.orders.each do |order| %>
-                            <div class="col-4">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-column align-items-center text-center">
-                                        <% if order.item.avatar.attached? %>
-                                            <%= image_tag order.item.avatar, alt: 'avatar', class: "card-img-top" %>
-                                        <% else %>
-                                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
-                                        <% end %>
-                                        <h5> Abonnements de <%= order.item.sub_category.duration%> mois </h5>
-                                        <p> Du <%= order.start_date %> au <%= order.end_date %></p>
-                                        <%= link_to "Voir plus", order_path(order) , class:"btn btn-primary stretched-link" %>
+                        <% @user.orders.reverse_each do |order| %>
+                            <% if ((order.end_date.year * 12 + order.end_date.month) - (DateTime.now.year * 12 + DateTime.now.month)) >= 0 %>
+                                <div class="col-4">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column align-items-center text-center">
+                                            <% if order.item.avatar.attached? %>
+                                                <%= image_tag order.item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                            <% else %>
+                                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                                            <% end %>
+                                            <h5> Abonnements de <%= order.item.sub_category.duration%> mois </h5>
+                                            <p> Du <%= order.start_date.strftime("%F") %> au <%= order.end_date.strftime("%F") %></p>
+                                            <%= link_to "Voir plus", order_path(order) , class:"btn btn-primary stretched-link" %>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <% end %>
                         <% end %>
                     </div>
                 </div>
@@ -97,23 +99,25 @@
                 <div class="card-body">
                     <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Past</i>orders</h6>
                     <div class="row">
-                        <% @user.orders.each do |order| %>
-                            <div class="col-4">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-column align-items-center text-center">
-                                        <% if order.item.avatar.attached? %>
-                                            <%= image_tag order.item.avatar, alt: 'avatar', class: "card-img-top" %>
-                                        <% else %>
-                                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
-                                        <% end %>
-                                        <h5> Abonnements de <%= order.item.sub_category.duration%> mois </h5>
-                                        <p> Du <%= order.start_date %> au <%= order.end_date %></p>
-                                        <%= link_to "Voir plus", order_path(order) , class:"btn btn-primary stretched-link" %>
+                        <% @user.orders.reverse_each do |order| %>
+                            <% if ((order.end_date.year * 12 + order.end_date.month) - (DateTime.now.year * 12 + DateTime.now.month)) < 0 %>
+                                <div class="col-4">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column align-items-center text-center">
+                                            <% if order.item.avatar.attached? %>
+                                                <%= image_tag order.item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                            <% else %>
+                                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                                            <% end %>
+                                            <h5> Abonnements de <%= order.item.sub_category.duration%> mois </h5>
+                                            <p> Du <%= order.start_date.strftime("%F") %> au <%= order.end_date.strftime("%F") %></p>
+                                            <%= link_to "Voir plus", order_path(order) , class:"btn btn-primary stretched-link" %>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <% end %>
                         <% end %>
                     </div>
                 </div>

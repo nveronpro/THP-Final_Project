@@ -32,7 +32,7 @@ SubType.create(specification: "Mensuel")
 
 
 SubCategory.all.each do |category|
-    3.times do 
+    1.times do 
         item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 1), description: "Hebdomadaire hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: category, sub_type: SubType.all.first)
         item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
 
@@ -46,7 +46,7 @@ end
 User.all.each do |user|
     3.times do
         item_tmp = Item.all.sample
-        order_tmp = Order.create(item: item_tmp, start_date: Time.new, end_date: Time.new)
+        order_tmp = Order.create(item: item_tmp, start_date: DateTime.now, end_date: DateTime.now + 3.months)
         OrderUser.create(order: order_tmp, user: user)
         order_tmp = Order.create(item: item_tmp, start_date: Time.new(2018, 1, 1), end_date: Time.new(2018, 1, 1))
         OrderUser.create(order: order_tmp, user: user)
