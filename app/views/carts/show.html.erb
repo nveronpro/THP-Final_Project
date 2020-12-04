@@ -103,32 +103,17 @@
                         <p class="mb-0">(TVA inclue)</p>
                       </strong>
                     </div>
-                    <span><strong><%= @cart.total_price %>€</strong></span>
-                  </li>
+                    <span><strong><%= @cart.total_price %>€</strong></span>                  
+                  </li>                  
                 </ul>
-
+                <% if @cart.total_price <= 0 %>
+                  <p>Votre panier est vide</p>
+                <% else %>
+                  <%= button_to 'Payer maintenant', checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary" %>
+                <% end %>
                 <!-- button_to "procéder au paiement", new_charge_path, class: "btn btn-primary btn-block", method: "get" -->
 
-                 <%= form_tag charges_path do %>
-                  <article>
-                    <% if flash[:error].present? %>
-                      <div id="error_explanation">
-                        <p><%= flash[:error] %></p>
-                      </div>
-                    <% end %>  
-                  </article>
-                  <div class="row mb-5">
-                    <div class="col-md-12 mt-4 text-center">
-                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                              data-description="A month's subscription"
-                              data-amount="<%= @amount%> "
-                              data-locale="auto"
-                              data-currency="eur">
-                      </script>
-                    </div>
-                  </div>
-                <% end %> 
+                 
               </div>
             </div>    
 
@@ -137,7 +122,7 @@
 
         </div>
         <!--Grid row-->
-
+      <script src="https://js.stripe.com/v3"></script>
       </section>
       <!--Section: Block Content-->
 

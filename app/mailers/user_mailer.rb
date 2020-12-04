@@ -17,6 +17,6 @@ class UserMailer < ApplicationMailer
       @user = order.user
       @cart = @user.cart
       @url = 'http://monsite.fr'
-      mail(to: @user.email, subject: 'Harry Cover - Merci pour votre commande n°#{@cart.id}/#{user.id}')      
+      mail(to: @user.email, subject: 'Harry Cover - Merci pour votre commande')      
     end
 end
