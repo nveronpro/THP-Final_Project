@@ -37,6 +37,9 @@
             </a>
           </div>
         <% end %>
+        <% if admin_signed_in? %>
+                <%= link_to "Se déconnecter", destroy_admin_session_path, method: :delete, :class =>"dropdown-item" %>
+        <% end %>
         <% if user_signed_in? %>
           <div class="nav-item dropdown">
               <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">

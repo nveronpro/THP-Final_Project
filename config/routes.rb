@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '/profile'
-  resource :users, path: '/profile'
+  devise_for :admins, path: 'admins', controller: {
+    registrations: 'admins/registrations',
+    sessions: 'admins/sessions',
+  }
+
+  devise_for :users, path: 'profile', controller: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+  }
+  resource :users, path: 'profile'
 
   resources :orders
   resources :items
