@@ -58,3 +58,4 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'table_print'
 gem 'faker'
 gem "aws-sdk-s3", require: false
+gem 'rails_admin', '~> 2.0'
