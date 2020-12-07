@@ -13,3 +13,10 @@ ul.rating {
   list-style-type: none;
   display: flex;
   }
+
+/* To resize the Carousel images so they don't take up too much height space */
+.carousel-item img {
+  width: auto;
+  //height: 225px;
+  max-height: 40rem;
+}

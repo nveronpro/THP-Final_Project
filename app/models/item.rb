@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  extend FriendlyId
+  friendly_id :slug_custom, use: :slugged
+
   validates :title, presence: true, length: { in: 3..20 }
   validates :description, presence: true, length: { in: 20..1000 }
   validates :price, presence: true,  :inclusion => 0..1000
@@ -12,4 +15,8 @@ class Item < ApplicationRecord
   has_many :orders
 
   has_one_attached :avatar
+
+  def slug_custom
+    "#{title}-#{size}"
+  end
 end

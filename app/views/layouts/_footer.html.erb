@@ -17,14 +17,13 @@
             <div class="col-md-6 col-lg-7 text-center text-md-right">
 
               <!-- Facebook -->
-              <a class="fb-ic" href="https://fr-fr.facebook.com/leslapinsdalice/?ref=page_internal">
+              <%= link_to "https://fr-fr.facebook.com/leslapinsdalice/?ref=page_internal", target: :_blank do %>
                 <i class="fab fa-facebook-f text-white mr-4 fa-lg"> </i>
-              </a>
+              <% end %>
               <!--Instagram-->
-              <a class="ins-ic" href="https://www.instagram.com/leslapinsdaliceparis/?hl=fr">
+              <%= link_to "https://www.instagram.com/leslapinsdaliceparis/?hl=fr", target: :_blank do %>
                 <i class="fab fa-instagram text-white fa-lg"> </i>
-              </a>
-
+              <% end %>
             </div>
             <!-- Grid column -->
 
@@ -59,7 +58,7 @@
             <h6 class="text-uppercase font-weight-bold">À propos</h6>
             <hr class="bg-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-              <a href="https://www.harry-cover.co/acheter-en-ligne">Acheter en ligne</a>
+              <%= link_to "Acheter en ligne", "https://www.harry-cover.co/acheter-en-ligne", target: :_blank %>
             </p>
             <p>
               <%= link_to "Notre histoire", about_path %>
@@ -68,7 +67,7 @@
               <%= link_to "Abonnements", abonnements_path %>
             </p>
             <p>
-              <a href="https://www.harry-cover.co/la-presse">La Presse</a>
+              <%= link_to "La Presse", "https://www.harry-cover.co/la-presse", target: :_blank %>
             </p>
 
           </div>
@@ -84,7 +83,7 @@
               Lundi au samedi :<br> 8H00 à 20h00
             </p>
             <p>
-              <a class="no-style" href="#!">Dimanche : <br>8h30 à 13h30</a>
+              Dimanche : <br>8h30 à 13h30
             </p>
 
           </div>
@@ -103,8 +102,7 @@
             <p>
               <i class="fas fa-phone mr-3"></i>01 47 05 19 13</p>
             <p>         
-              <i class="fas fa-laptop mr-3"></i><a href="https://www.harry-cover.co/">www.harry-cover.co</a></p>
-
+              <i class="fas fa-laptop mr-3"></i><%= link_to "www.harry-cover.co", "https://www.harry-cover.co/", target: :_blank %></p>
           </div>
           <!-- Grid column -->
 

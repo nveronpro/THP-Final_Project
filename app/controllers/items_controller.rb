@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_admin!, only: [:new, :create, :destroy]
+  
   def index
     @items = Item.all
   end
@@ -44,7 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def find_item
-    @item = Item.find(params[:id])
+    @item = Item.friendly.find(params[:id])
   end
 
 

@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :admins, path: 'admins', controller: {
+  devise_for :admins, path: 'admins', controllers: {
     registrations: 'admins/registrations',
     sessions: 'admins/sessions',
   }
 
-  devise_for :users, path: 'profile', controller: {
+  devise_for :users, path: 'profile', controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
   }
   resource :users, path: 'profile'
 
   resources :orders
-  resources :items
+  resources :items, path: 'product'
   resources :item_carts
   resources :charges
 
