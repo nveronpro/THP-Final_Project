@@ -9,12 +9,14 @@ class CheckoutController < ApplicationController
 
     @session = Stripe::Checkout::Session.create({
             payment_method_types: ['card'],
+            mode: 'subscription',
             line_items: [{
                     name: "Votre panier",
-                    description: "Tous vos produits",
+                    description: "Votre abonnement",                    
                     amount: @cart.items.pluck(:price).sum.to_i * 100,
                     currency: 'eur',
-                    quantity: 1
+                    quantity: 1,
+                    price: data['price_1HvhPjLpDhDvbzmLGbrHK6FZ']
                   }],
             success_url: checkout_success_url,
             cancel_url: checkout_cancel_url,
