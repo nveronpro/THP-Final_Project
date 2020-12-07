@@ -21,12 +21,12 @@
                                                 <%if item.avatar.attached?%>
                                                     <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
                                                 <%else%>
-                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+                                                    <img class="card-img-top" src="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/27868049_1972986559688366_1573794735593377626_n.jpg?_nc_cat=111&ccb=2&_nc_sid=8bfeb9&_nc_ohc=DaC4Rz99pa8AX_cizQZ&_nc_ht=scontent-cdg2-1.xx&oh=0aa491ef48715399385eb169e71d8ea0&oe=5FF5027F" alt="Sample">
                                                 <%end%>
                                                 <div class="card-body">
                                                     <h5 class="card-title"><%= item.title %></h5>
                                                     <p class="card-text"><%= item.price %> €</p>
-                                                    <p class="card-text">Reçois pendant <%= item.sub_category.duration %> mois de facons <%= item.sub_type.specification %> un panier <%= item.size %></p>
+                                                    <p class="card-text">Reçois pendant <%= item.sub_category.duration %> mois de façon <%= item.sub_type.specification %> un panier <%= item.size %></p>
                                                     <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
                                                 </div>
                                             </div>
