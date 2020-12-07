@@ -122,7 +122,7 @@
                     Code postale: <i><%= current_user.zipcode %></i><br><br>
                     <%= link_to 'Complétez votre profile', edit_users_path, class: "btn btn-danger" %>
                   <% else %>
-                    <%= button_to 'Payer maintenant', checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary" %>
+                    <%= button_to 'Payer maintenant', checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary", id: "checkout-button" %>
                   <% end %>
                 <% end %>
                 <!-- button_to "procéder au paiement", new_charge_path, class: "btn btn-primary btn-block", method: "get" -->

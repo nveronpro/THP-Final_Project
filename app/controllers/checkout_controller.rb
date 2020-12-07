@@ -7,20 +7,16 @@ class CheckoutController < ApplicationController
       return
     end
 
-    @session = Stripe::Checkout::Session.create({
-            payment_method_types: ['card'],
-            mode: 'subscription',
-            line_items: [{
-                    name: "Votre panier",
-                    description: "Votre abonnement",                    
-                    amount: @cart.items.pluck(:price).sum.to_i * 100,
-                    currency: 'eur',
-                    quantity: 1,
-                    price: data['price_1HvhPjLpDhDvbzmLGbrHK6FZ']
-                  }],
-            success_url: checkout_success_url,
-            cancel_url: checkout_cancel_url,
-        })
+      @session = Stripe::Checkout::Session.create({
+        payment_method_types: ['card'],      
+        line_items: [{
+          price: 'price_1HvhPjLpDhDvbzmLGbrHK6FZ',
+          quantity: 1,
+        }],
+        mode: 'subscription',
+        success_url: checkout_success_url,
+        cancel_url: checkout_cancel_url,
+      })
 
     respond_to do |format|
         format.js #render create.js.erb
