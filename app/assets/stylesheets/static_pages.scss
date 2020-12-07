@@ -16,15 +16,49 @@
   stroke-width: 2 !important;
   }
 
-  .jumbotron-banner-home {
-    background-image: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/40478483_2122398428080511_6056274147900653568_n.jpg?_nc_cat=110&ccb=2&_nc_sid=dd9801&_nc_ohc=ctOLD7cjCUwAX8IHaNC&_nc_ht=scontent-cdt1-1.xx&oh=8e7350b63c161c08080648e63dcd3f12&oe=5FF05BC5);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 350px;
-    background-position: center;
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
+.jumbotron-banner-home {
+  background-image: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/40478483_2122398428080511_6056274147900653568_n.jpg?_nc_cat=110&ccb=2&_nc_sid=dd9801&_nc_ohc=ctOLD7cjCUwAX8IHaNC&_nc_ht=scontent-cdt1-1.xx&oh=8e7350b63c161c08080648e63dcd3f12&oe=5FF05BC5);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 350px;
+  background-position: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%; }
+
+  .gallery .pics {
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease; }
+  
+  .gallery .animation {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
+  
+  @media (max-width: 450px) {
+  .gallery {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-width: 100%;
+  -moz-column-width: 100%;
+  column-width: 100%;
+  }
   }
   
+  @media (max-width: 400px) {
+  .btn.filter {
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  }
+  }

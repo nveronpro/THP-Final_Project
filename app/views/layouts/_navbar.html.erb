@@ -21,7 +21,7 @@
             <span class="sr-only">(Qui sommes nous)</span>
           </li>
           <li class="nav-item">
-            <%= link_to 'Informations', galerie_path, :class =>"nav-link" %>
+            <%= link_to 'Informations', informations_path, :class =>"nav-link" %>
             <span class="sr-only">(Informations supplemantaire)</span>
           </li>
           <li class="nav-item">
@@ -50,14 +50,27 @@
               </div>
           </div>
          <% else %> 
-          <div class="nav-item dropdown">
-            <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user circle mr-1"></span> Sign up / Sign in</button>
-            <div class="dropdown-menu">
-              <%= link_to 'Créer son compte', new_user_registration_path, :class =>"dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to 'Se connecter', new_user_session_path, :class =>"dropdown-item" %>
-            </div>
-          </div>
+            <% if admin_signed_in? %>
+                <div class="nav-item dropdown">
+                    <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="fa fa-user circle mr-1"></span> Mon compte</button>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <%= link_to "Dashboard", rails_admin_path, :class =>"dropdown-item" %>
+                        <div class="dropdown-divider"></div>
+                        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class =>"dropdown-item" %>
+                    </div>
+                </div>
+            <% else %>
+                <div class="nav-item dropdown">
+                    <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user circle mr-1"></span> Sign up / Sign in</button>
+                    <div class="dropdown-menu">
+                        <%= link_to 'Créer son compte', new_user_registration_path, :class =>"dropdown-item" %>
+                        <div class="dropdown-divider"></div>
+                        <%= link_to 'Se connecter', new_user_session_path, :class =>"dropdown-item" %>
+                    </div>
+                </div>
+            <% end %>
+         
         <% end %>
       </div>
     </nav>
