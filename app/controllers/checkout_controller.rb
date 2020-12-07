@@ -6,12 +6,12 @@ class CheckoutController < ApplicationController
       redirect_to root_path
       return
     end
-
+    
       @session = Stripe::Checkout::Session.create({
         payment_method_types: ['card'],      
-        line_items: [{
-          price: 'price_1HvhPjLpDhDvbzmLGbrHK6FZ',
-          quantity: 1,
+        line_items: [{          
+          price: @cart.items.first.price_id,
+          quantity: 1,          
         }],
         mode: 'subscription',
         success_url: checkout_success_url,

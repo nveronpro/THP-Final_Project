@@ -32,6 +32,11 @@
     </div>
 
     <div class="form-group">
+        <label>Price ID pour Stripe</label>
+        <%= f.text_field :price_id, class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
         <label>Catégorie de l'article </label>
         <%= f.select :sub_category_id, SubCategory.pluck(:duration, :id), :prompt => 'Choose the number of months', class: 'form-control' %>
     </div>
