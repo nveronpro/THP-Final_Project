@@ -5,6 +5,7 @@ module Accessible
     end
   
     protected
+
     def check_user
       if current_admin
         flash.clear
@@ -13,7 +14,7 @@ module Accessible
       elsif current_user
         flash.clear
         # The authenticated root path can be defined in your routes.rb in: devise_scope :user do...
-        redirect_to(authenticated_user_root_path) and return
+        redirect_to(root_path) and return
       end
     end
 end
