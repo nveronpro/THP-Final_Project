@@ -59,3 +59,4 @@ gem 'table_print'
 gem 'faker'
 gem "aws-sdk-s3", require: false
 gem 'rails_admin', '~> 2.0'
+gem 'friendly_id', '~> 5.4.0'

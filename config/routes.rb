@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resource :users, path: 'profile'
 
   resources :orders
-  resources :items
+  resources :items, path: 'product'
   resources :item_carts
   resources :charges
 
