@@ -44,7 +44,7 @@
                                 <h5 class="card-title">Voici nos offres sur une durée de <%= category.duration %> mois</h5>
                                 <div class="card-deck">
                                 <% category.items.each do |item| %>
-                                    <% if item.sub_type.specification == "Hebdomadaire" %>
+                                    <% if item.sub_type.specification == "Weekly" %>
                                         <div class="card">
                                             <%if item.avatar.attached?%>
                                                 <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
@@ -71,7 +71,7 @@
                                 <h5 class="card-title">Voici nos offres sur une durée de <%= category.duration %> mois</h5>
                                 <div class="card-deck">
                                 <% category.items.each do |item| %>
-                                    <% if item.sub_type.specification == "Mensuel" %>
+                                    <% if item.sub_type.specification == "Monthly" %>
                                         <div class="card">
                                             <%if item.avatar.attached?%>
                                                 <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
