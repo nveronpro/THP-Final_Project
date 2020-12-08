@@ -70,8 +70,8 @@
         </div>
         <hr>
         <% if user_signed_in? %>      
-          <% if current_user.cart.items.find_by(id: @item.id) %> 
-            Item déjà dans votre panier
+          <% if current_user.cart.items.first %> 
+            Un Produit est déjà dans votre panier
           <% else %>
             <%= link_to panier_path(@item), class:"btn btn-primary btn-md mr-1 mb-2", method: "POST" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Add to cart<% end %>      
           <% end %> 

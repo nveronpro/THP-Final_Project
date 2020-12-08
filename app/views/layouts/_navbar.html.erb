@@ -31,10 +31,10 @@
         </ul>
         <% if user_signed_in? %>
           <div class="nav-item">
-            <a href="/carts" class="nav-link navbar-link-2">
+            <%= link_to carts_path, class:"nav-link navbar-link-2" do%>
               <span class="badge badge-pill badge-secondary"><%= current_user.cart.items.length %></span>
               <i class="fas fa-shopping-cart fa-lg mr-2 cart-nav"></i>
-            </a>
+            <% end %>
           </div>
         <% end %>
         <% if user_signed_in? %>
