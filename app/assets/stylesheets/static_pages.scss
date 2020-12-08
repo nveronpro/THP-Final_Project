@@ -1,6 +1,15 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.masthead {
+  height: 80vh;
+  min-height: 500px;
+  background-image: url('https://images.unsplash.com/photo-1591184510259-b6f1be3d7aff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .service-column {
   border-right: 1px solid #495057;
   text-align: left;
@@ -61,4 +70,19 @@
   padding-left: 1.1rem;
   padding-right: 1.1rem;
   }
+  }
+
+  img.bd-placeholder-img.rounded-circle.mb-4 {
+    width: auto;
+    height: 200px;
+    }
+  
+  @media (min-width: 1000px) {
+    .col-lg-4-pres {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
   }
