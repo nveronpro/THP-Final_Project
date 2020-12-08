@@ -12,7 +12,7 @@
 <div class="container">
   <div class="my-5">
     <div class="row">
-      <div class="col-md-5 mb-4 mb-md-0">
+      <div class="col-md-5 mb-4 mb-md-0 my-2">
 
         <div class="">
         <%if @item.avatar.attached?%>
@@ -26,9 +26,9 @@
         </div>
 
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7 my-2">
 
-        <h5>Abonnement <%= @item.sub_category.duration %> mois</h5>
+        <h5 class="mt-4">Abonnement <%= @item.sub_category.duration %> mois</h5>
         <hr class="hr-product my-4">
         <p class="mb-2 text-muted text-uppercase small"><%= @item.title %></p>
         <ul class="rating">
