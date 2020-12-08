@@ -53,6 +53,8 @@
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1); }
+
+  
   
   @media (max-width: 450px) {
   .gallery {
@@ -75,6 +77,7 @@
   img.bd-placeholder-img.rounded-circle.mb-4 {
     width: auto;
     height: 200px;
+    margin-top: 1rem;
     }
   
   @media (min-width: 1000px) {
