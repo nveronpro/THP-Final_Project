@@ -1076,7 +1076,7 @@ pre code {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .col-md {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -4751,7 +4751,7 @@ input[type="button"].btn-block {
   margin-bottom: 15px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 800px) {
   .card-deck {
     display: -ms-flexbox;
     display: flex;
