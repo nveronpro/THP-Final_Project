@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
     before_action :configure_devise_parameters, if: :devise_controller?
+    before_action :set_locale
+
+    def set_locale
+        I18n.locale = params[:lang] || locale_from_header
+    end
+
+    def locale_from_header
+        request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first
+    end
 
     def configure_devise_parameters
     devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:email, :password, :password_confirmation)}
