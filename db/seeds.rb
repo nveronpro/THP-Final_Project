@@ -53,9 +53,7 @@ User.all.each do |user|
         order_tmp = Order.create(item: item_tmp, start_date: Time.new(2018, 1, 1), end_date: Time.new(2018, 1, 1))
         OrderUser.create(order: order_tmp, user: user)
     end
-    1.times do
-        ItemCart.create(item: Item.all.sample, cart: user.cart)
-    end
+    ItemCart.create(item: Item.all.sample, cart: user.cart)
 end
 
 
