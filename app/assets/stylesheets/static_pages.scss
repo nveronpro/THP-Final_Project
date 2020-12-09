@@ -2,58 +2,73 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .masthead {
-  height: 80vh;
-  min-height: 500px;
-  background-image: url('https://images.unsplash.com/photo-1591184510259-b6f1be3d7aff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    height: 80vh;
+    min-height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1591184510259-b6f1be3d7aff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .service-column {
-  border-right: 1px solid #495057;
-  text-align: left;
-  padding-top: 0;
-  padding-bottom: 0;
-  display: -ms-flexbox;
-  }
+    border-right: 1px solid #495057;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: -ms-flexbox;
+}
 
 .service-icon {
-  width: 3rem !important;
-  height: 3rem !important;
-  margin-right: 1.5rem;
-  stroke-width: 2 !important;
-  }
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-right: 1.5rem;
+    stroke-width: 2 !important;
+}
 
 .jumbotron-banner-home {
-  background-image: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-8/12079885_1564286347225058_3331115903311083337_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=s8EWaNEBsmEAX81IKyq&_nc_ht=scontent-cdt1-1.xx&oh=8d57b6c19434b7b41537c0b314fda7eb&oe=5FF4E167);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 350px;
-  background-position: center;
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
+    background-image: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-8/12079885_1564286347225058_3331115903311083337_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=s8EWaNEBsmEAX81IKyq&_nc_ht=scontent-cdt1-1.xx&oh=8d57b6c19434b7b41537c0b314fda7eb&oe=5FF4E167);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 350px;
+    background-position: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
 }
 
 .gallery {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-  -webkit-column-width: 33%;
-  -moz-column-width: 33%;
-  column-width: 33%; }
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%;
+}
 
-  .gallery .pics {
-  -webkit-transition: all 350ms ease;
-  transition: all 350ms ease; }
-  
-  .gallery .animation {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1); }
+.gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+}
 
+.gallery .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+@media (max-width: 450px) {
+    .gallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width: 100%;
+    }
+}
+
+<<<<<<< HEAD
   /* To hide the Captcha 'Nickname' field in the Contact form*/
   .hidden {
     display: none;
@@ -76,19 +91,27 @@
   padding-right: 1.1rem;
   }
   }
+=======
+@media (max-width: 400px) {
+    .btn.filter {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+}
+>>>>>>> 4ae683355457ebc1490069bdbd44c07e96bd5585
 
-  img.bd-placeholder-img.rounded-circle.mb-4 {
+img.bd-placeholder-img.rounded-circle.mb-4 {
     width: auto;
     height: 200px;
     margin-top: 1rem;
-    }
-  
-  @media (min-width: 1000px) {
+}
+
+@media (min-width: 1000px) {
     .col-lg-4-pres {
-      -ms-flex-preferred-size: 0;
-      flex-basis: 0;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      max-width: 100%;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
     }
-  }
+}
