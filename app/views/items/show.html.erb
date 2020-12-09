@@ -16,7 +16,7 @@
         <%if @item.avatar.attached?%>
           <%= image_tag @item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
         <%else%>
-          <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+          <%= image_tag("default.jpg", class:"img-fluid w-100") %>
         <%end%>
       </div>
       <div class="col-md-7 my-2">
