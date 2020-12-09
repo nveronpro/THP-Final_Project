@@ -15,12 +15,8 @@ Rails.application.routes.draw do
   resources :items, path: 'product'
   resources :item_carts
   resources :charges
-<<<<<<< HEAD
   resources :contacts, only: [:new, :create]
-=======
   resource :carts
-
->>>>>>> 4ae683355457ebc1490069bdbd44c07e96bd5585
 
   get '/contact', to: 'static_pages#contact'
   get '/about', to: 'static_pages#about'

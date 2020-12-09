@@ -1,5 +1,24 @@
 <div class="container contact-form my-5">
-  <form method="post">
+  <%= form_for @contact do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email, required: true %>
+    <br>
+    <%= f.label :message %>
+    <%= f.text_area :message, as: :text %>
+    <br>
+    <div class="hidden">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, hint: 'laisser ce champ vide' %>
+    </div>
+    <%= f.submit 'Envoyer Message', class: "button" %>
+  <% end %>
+</div>
+
+<!--
+<form method="post">
     <h3>Ecrivez nous un message</h3>
     <div class="row">
       <div class="col-md-6">
@@ -26,4 +45,4 @@
       </div>
     </div>
   </form>
-</div>
+-->
