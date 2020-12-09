@@ -3,10 +3,10 @@
   <p class="lead"><strong>Veuillez vérifier votre adresse e-mail</strong> pour plus d'informations sur votre commande. Nous vous remercions de votre confiance.</p>
   <hr>
   <p>
-    Vous avez une question ? <a href="/contact">Contactez-nous</a>
+    Vous avez une question ? <%= link_to "Contactez-nous", contact_path%>
   </p>
   <p class="lead">
-    <a class="btn btn-outline-primary btn-sm" href="/" role="button">Continuer vers la page d'accueil</a>
+    <%= link_to "Continuer vers la page d'accueil", root_path, role:"button", class: "btn btn-outline-primary btn-sm"%>
   </p>
 </div>
 
