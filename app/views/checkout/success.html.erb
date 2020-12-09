@@ -1,12 +1,12 @@
-<div class="jumbotron text-center">
-  <h1 class="display-3">Thank You!</h1>
-  <p class="lead"><strong>Please check your email</strong> for For more information about your order. Thank you for your confidence.</p>
+<div class="text-center my-4">
+  <h1 class="display-3">Merci!</h1>
+  <p class="lead"><strong>Veuillez vérifier votre adresse e-mail</strong> pour plus d'informations sur votre commande. Nous vous remercions de votre confiance.</p>
   <hr>
   <p>
-    Do you have a question? <a href="/contact">Contact us</a>
+    Vous avez une question ? <%= link_to "Contactez-nous", contact_path%>
   </p>
   <p class="lead">
-    <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
+    <%= link_to "Continuer vers la page d'accueil", root_path, role:"button", class: "btn btn-outline-primary btn-sm"%>
   </p>
 </div>
 

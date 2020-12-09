@@ -5,7 +5,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="/">Harry Cover</a>
+      <%= link_to "Harry Cover", root_path, class: "navbar-brand"%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,10 +31,10 @@
         </ul>
         <% if user_signed_in? %>
           <div class="nav-item">
-            <a href="/carts" class="nav-link navbar-link-2">
+            <%= link_to carts_path, class:"nav-link navbar-link-2" do%>
               <span class="badge badge-pill badge-secondary"><%= current_user.cart.items.length %></span>
               <i class="fas fa-shopping-cart fa-lg mr-2 cart-nav"></i>
-            </a>
+            <% end %>
           </div>
         <% end %>
         <% if user_signed_in? %>
@@ -70,7 +70,6 @@
                     </div>
                 </div>
             <% end %>
-         
         <% end %>
       </div>
     </nav>

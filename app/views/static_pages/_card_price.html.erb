@@ -1,6 +1,6 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Abonnements Populaires</h1>
-  <p class="lead">Tous nos paniers sont des fruits et legumes de la plus haute qualite, de saison, choisi avec soin par notre equipe pour vous.</p>
+  <h2 class="display-4">Nos abonnements populaires</h2>
+  <p class="lead">Tous nos paniers contiennent des fruits et légumes de la plus haute qualité, de saison, sélectionnés avec soin par notre équipe rien que pour vous.</p>
 </div>
 
 <div class="container">
@@ -8,57 +8,60 @@
 
     <div class="col-md-4 text-center">
       <div class="card-deck mb-3">
+        <% item = @items.where(sub_type: SubType.first, sub_category: SubCategory.first)[0]%>
         <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Grenade</h4>
+            <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">15€ <small class="text-muted">/ sem</small></h1>
+          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ sem</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>1 panier des fruits et/ou legumes </li>
+              <li>1 panier de fruits et/ou legumes </li>
               <li>1 fois par semaine</li>
-              <li>Produits des saison</li>
-              <li>Muri pret pour etre degouster</li>
-              <li>Livre chez vous</li>
+              <li>Produits de saison</li>
+              <li>Des produits murs prêts à être dégusté</li>
+              <li>Livré directement dans votre cuisine</li>
             </ul><br>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Je découvre</button>
+            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <div class="card mb-4 shadow-sm">
+        <% item = @items.where(sub_type: SubType.last, sub_category: SubCategory.first)[1]%>
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Pampelmousse</h4>
+          <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">20€ <small class="text-muted">/ mo</small></h1>
+          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li>1 panier des fruits et/ou legumes </li>
+            <li>1 panier de fruits et/ou legumes </li>
             <li>1 fois par mois</li>
-            <li>Produits des saison</li>
-            <li>Different etape de murissons pour pouvoir degouster pendant le mois entier</li>
-            <li>Livre chez vous</li>
+            <li>Produits de saison</li>
+            <li>Des produits que l'on peut conserver pour pouvoir en profiter pendant le mois entier</li>
+            <li>Livré directement dans votre cuisine</li>
           </ul>
-          <button type="button" class="btn btn-lg btn-block btn-primary">En savoir plus</button>
+            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
         </div>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <div class="card mb-4 shadow-sm">
+        <% item = @items.where(sub_type: SubType.last, sub_category: SubCategory.first)[2]%>
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Melon</h4>
+          <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">35€ <small class="text-muted">/ mo</small></h1>
+          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li>1 panier des fruits et/ou legumes </li>
+            <li>1 panier de fruits et/ou legumes </li>
             <li>1 fois par mois</li>
-            <li>Produits des saison</li>
-            <li>Different etape de murissons pour pouvoir degouster pendant le mois entier</li>
-            <li>Livre chez vous</li>
+            <li>Produits de saison</li>
+            <li>Des produits de qualités pour pouvoir en profiter pendant le mois entier</li>
+            <li>Livré directement dans votre cuisine</li>
           </ul>
-          <button type="button" class="btn btn-lg btn-block btn-primary">En savoir plus</button>
+            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>        
         </div>
       </div>
     </div>
