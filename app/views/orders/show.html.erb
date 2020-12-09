@@ -2,18 +2,11 @@
   <div class="my-5">
     <div class="row">
       <div class="col-md-5 mb-4 mb-md-0">
-
-        <div class="">
         <%if @order.item.avatar.attached?%>
           <%= image_tag @order.item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
         <%else%>
           <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
         <%end%>
-          <a href="#!">
-            <div class="mask waves-effect waves-light"></div>
-          </a>
-        </div>
-
       </div>
       <div class="col-md-7">
 
