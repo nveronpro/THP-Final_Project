@@ -11,5 +11,4 @@ class AdminMailer < ApplicationMailer
       mail(to: f.email, subject: 'Harry Cover - Nouvelle commande')
     end      
   end
-
 end

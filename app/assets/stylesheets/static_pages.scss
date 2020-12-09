@@ -54,7 +54,10 @@
   -ms-transform: scale(1);
   transform: scale(1); }
 
-  
+  /* To hide the Captcha 'Nickname' field in the Contact form*/
+  .hidden {
+    display: none;
+  }
   
   @media (max-width: 450px) {
   .gallery {
