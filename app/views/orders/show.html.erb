@@ -2,21 +2,13 @@
   <div class="my-5">
     <div class="row">
       <div class="col-md-5 mb-4 mb-md-0">
-
-        <div class="">
         <%if @order.item.avatar.attached?%>
           <%= image_tag @order.item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
         <%else%>
-          <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+          <%= image_tag("default.jpg", class:"img-fluid w-100") %>
         <%end%>
-          <a href="#!">
-            <div class="mask waves-effect waves-light"></div>
-          </a>
-        </div>
-
       </div>
       <div class="col-md-7">
-
         <h5>Abonnement <%= @order.item.sub_category.duration %> mois</h5>
         <hr class="hr-product my-4">
         <p class="mb-2 text-muted text-uppercase small"><%= @order.item.title %></p>

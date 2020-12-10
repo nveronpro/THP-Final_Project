@@ -31,7 +31,7 @@
 
 en:
   hello: "Hello world"
-  title_big_banner: "Harry Cover comes to your home!"
+  title: "Harry Cover comes to your home!"
   text_big_banner: "Your greengrocer in Paris 7th. Fresh fruits and vegetables every week or every month!"
   title_card_price: "Our popular subscriptions"
   subtitle_card_price: "All our baskets contain fruits and vegetables of the highest quality, in season, carefully selected by our team just for you."
@@ -94,3 +94,8 @@ en:
   about_li_5: "steamed vegetables, ready to be reheated for a fast and healthy diet"
   about_text_4: "Are you invited? Bring the aperitif, order one of our crudités baskets !!!
       Think about the organic and healthy snack for children, let them discover "Harry's delicacies"!"
+  contact_title: "Write us a message"
+  name: "name"
+  phone_number: "Telephone"
+  cta_send_message: "Send Message"
+  contact_message: "Your Message"

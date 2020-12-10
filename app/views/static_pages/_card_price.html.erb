@@ -8,12 +8,13 @@
 
     <div class="col-md-4 text-center">
       <div class="card-deck mb-3">
+        <% item = @items.where(sub_type: SubType.first, sub_category: SubCategory.first)[0]%>
         <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><%= t "title_first_subscription" %></h4>
+            <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">15€ <small class="text-muted">/ sem</small></h1>
+          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ sem</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li><%= t "body1_first_subscription" %></li>
               <li><%= t "body2_first_subscription" %></li>
@@ -21,18 +22,19 @@
               <li><%= t "body4_first_subscription" %></li>
               <li><%= t "body5_first_subscription" %></li>
             </ul><br>
-            <%= link_to t("cta_discover"), abonnements_path, class:"btn btn-block btn-primary btn-lg mx-auto"%>          
+            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <div class="card mb-4 shadow-sm">
+        <% item = @items.where(sub_type: SubType.last, sub_category: SubCategory.first)[1]%>
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal"><%= t "title_scd_subscription" %></h4>
+          <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">20€ <small class="text-muted">/ mo</small></h1>
+          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
           <ul class="list-unstyled mt-3 mb-4">
             <li><%= t "body1_scd_subscription" %></li>
             <li><%= t "body2_scd_subscription" %></li>
@@ -40,17 +42,18 @@
             <li><%= t "body4_scd_subscription" %></li>
             <li><%= t "body5_scd_subscription" %></li>
           </ul>
-            <%= link_to t("cta_discover"), abonnements_path, class:"btn btn-block btn-primary btn-lg mx-auto"%>          
+            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
         </div>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <div class="card mb-4 shadow-sm">
+        <% item = @items.where(sub_type: SubType.last, sub_category: SubCategory.first)[2]%>
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal"><%= t "title_thrd_subscription" %></h4>
+          <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">35€ <small class="text-muted">/ mo</small></h1>
+          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
           <ul class="list-unstyled mt-3 mb-4">
             <li><%= t "body1_scd_subscription" %></li>
             <li><%= t "body2_scd_subscription" %></li>
@@ -58,7 +61,7 @@
             <li><%= t "body4_thrd_subscription" %></li>
             <li><%= t "body5_scd_subscription" %></li>
           </ul>
-            <%= link_to t("cta_discover"), abonnements_path, class:"btn btn-block btn-primary btn-lg mx-auto"%>          
+            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>        
         </div>
       </div>
     </div>

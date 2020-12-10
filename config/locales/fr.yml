@@ -1,6 +1,6 @@
 fr:
   remember_me: "Se souvenir de moi"
-  title_big_banner: "Harry Cover s'invite chez vous !"
+  title: "Harry Cover s'invite chez vous !"
   text_big_banner: "Votre primeur de qualité dans Paris 7ème. Des fruits et légumes frais chaque semaine ou chaque mois !"
   title_card_price: "Nos abonnements populaires"
   subtitle_card_price: "Tous nos paniers contiennent des fruits et légumes de la plus haute qualité, de saison, sélectionnés avec soin par notre équipe rien que pour vous."
@@ -63,3 +63,8 @@ fr:
   about_li_5: "les légumes cuits vapeur, prêts à être réchauffés pour une alimentation saine et rapide"
   about_text_4: "Vous êtes invités ? Apportez l'apéritif, commandez l'une de nos corbeilles de crudités !!!
       Pensez au goûter bio et sain pour les enfants, faites leur découvrir  "les gourmandises d'Harry" !"
+  contact_title: "Ecrivez nous un message"
+  name: "nom"
+  phone_number: "Portable"
+  cta_send_message: "Envoyer Message"
+  contact_message: "Votre Message"
