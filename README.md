@@ -1,7 +1,7 @@
 
 <p align="center">
   <img src="app/assets/images/logo.webp" alt="Logo" width="200" height="200">
-  <h3 align="center">Monthly - Harry Cover</h3>
+  <h3 align="center">Monthlee - Harry Cover</h3>
   <p align="center">
     <br />
     <a href="https://the-final-project-production.herokuapp.com/">View Demo</a>
@@ -41,7 +41,11 @@
 
 [![Harry cover][product-screenshot]](https://the-final-project-production.herokuapp.com/)
 
-...
+Covid 19 had a devastating effect not only on the healthcare sector but the economy as well. Small businesses were the ones who suffered the most. Monthlee provides a way for small businesses to expand their sales channels and maintain a revenue stream even when they cannot open their shops to customers.
+
+Monthlee provides an online subscription platform which allows the small business to sell monthly and weekly subscriptions to their clients. We take care of everything from creating the website, handling the subscriptions, SEO optimization of the website, and reaching a large ex-pat community in France. 
+
+We will give a list with the client information to the small business and they fulfill the order and handle the shipping.
 
 ### Built With
 
@@ -106,7 +110,7 @@ Maria Malinar - [GitHub](https://github.com/mmolinar) - mariamolinaryarza@gmail.
 Pierre Henry - [GitHub](https://github.com/HenPie) - pierre.henry21@outlook.fr <br>
 Nicolas Veron - [GitHub](https://github.com/Arrvac) - arrvac@gmail.com <br>
 
-Project Link: [Monthly - Harry Cover](https://github.com/Arrvac/THP-Final_Project)<br>
+Project Link: [Monthlee - Harry Cover](https://github.com/Arrvac/THP-Final_Project)<br>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
