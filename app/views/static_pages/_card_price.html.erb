@@ -1,6 +1,6 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h2 class="display-4">Nos abonnements populaires</h2>
-  <p class="lead">Tous nos paniers contiennent des fruits et légumes de la plus haute qualité, de saison, sélectionnés avec soin par notre équipe rien que pour vous.</p>
+  <h2 class="display-4"><%= t "title_card_price" %></h2>
+  <p class="lead"><%= t "subtitle_card_price" %></p>
 </div>
 
 <div class="container">
@@ -16,13 +16,13 @@
           <div class="card-body">
           <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ sem</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>1 panier de fruits et/ou legumes </li>
-              <li>1 fois par semaine</li>
-              <li>Produits de saison</li>
-              <li>Des produits murs prêts à être dégusté</li>
-              <li>Livré directement dans votre cuisine</li>
+              <li><%= t "body1_first_subscription" %></li>
+              <li><%= t "body2_first_subscription" %></li>
+              <li><%= t "body3_first_subscription" %></li>
+              <li><%= t "body4_first_subscription" %></li>
+              <li><%= t "body5_first_subscription" %></li>
             </ul><br>
-            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
+            <%= link_to t("cta_discover"), item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
           </div>
         </div>
       </div>
@@ -36,13 +36,13 @@
         <div class="card-body">
           <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li>1 panier de fruits et/ou legumes </li>
-            <li>1 fois par mois</li>
-            <li>Produits de saison</li>
-            <li>Des produits que l'on peut conserver pour pouvoir en profiter pendant le mois entier</li>
-            <li>Livré directement dans votre cuisine</li>
+            <li><%= t "body1_scd_subscription" %></li>
+            <li><%= t "body2_scd_subscription" %></li>
+            <li><%= t "body3_scd_subscription" %></li>
+            <li><%= t "body4_scd_subscription" %></li>
+            <li><%= t "body5_scd_subscription" %></li>
           </ul>
-            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
+            <%= link_to t("cta_discover"), item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
         </div>
       </div>
     </div>
@@ -55,13 +55,13 @@
         <div class="card-body">
           <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li>1 panier de fruits et/ou legumes </li>
-            <li>1 fois par mois</li>
-            <li>Produits de saison</li>
-            <li>Des produits de qualités pour pouvoir en profiter pendant le mois entier</li>
-            <li>Livré directement dans votre cuisine</li>
+            <li><%= t "body1_scd_subscription" %></li>
+            <li><%= t "body2_scd_subscription" %></li>
+            <li><%= t "body3_scd_subscription" %></li>
+            <li><%= t "body4_thrd_subscription" %></li>
+            <li><%= t "body5_scd_subscription" %></li>
           </ul>
-            <%= link_to "Je découvre", item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>        
+            <%= link_to t("cta_discover"), item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>        
         </div>
       </div>
     </div>
