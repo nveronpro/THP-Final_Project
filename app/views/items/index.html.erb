@@ -83,7 +83,7 @@
                                                 <h5 class="card-title"><%= item.title %></h5>
                                                 <p class="card-text"><%= item.price %> €</p>
                                                 <p class="card-text"><%= t "receive" %> <%= item.sub_category.duration %> <%= t "month_in" %> <%= item.sub_type.specification %> <%= t "basket" %> <%= item.size %></p>
-                                                <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
+                                                <%= link_to t("cta_see_more"), item_path(item) , class:"btn btn-primary stretched-link" %>
                                             </div>
                                         </div>
                                     <% end %>
