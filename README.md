@@ -1,3 +1,5 @@
+[![Harry cover][product-logo]](https://the-final-project-production.herokuapp.com/)
+
 <p align="center">
   <h3 align="center">Monthly</h3>
 
@@ -38,7 +40,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://the-final-project-production.herokuapp.com/)
+[![Harry cover][product-screenshot]](https://the-final-project-production.herokuapp.com/)
 
 There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -120,3 +122,4 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: app/assets/images/screen_readme.jpg
+[product-logo]: app/assets/images/logo.webp
