@@ -1,11 +1,11 @@
 <div class="text-center my-4">
-  <h1 class="display-3">Nous avons rencontré une erreur !</h1>
-  <p class="lead"><strong>Veuillez réessayer plus tard</strong></p>
+  <h1 class="display-3"><%= t "checkout_cancel_error" %></h1>
+  <p class="lead"><strong><%= t "checkout_cancel_tryagain" %></strong></p>
   <hr>
   <p>
-    Vous avez une question ? <%= link_to "Contactez-nous", contact_path%>
+    <%= t "checkout_cancel_question" %> <%= link_to ("contact_title"), contact_path%>
   </p>
   <p class="lead">
-    <%= link_to "Continuer vers la page d'accueil", root_path, role:"button", class: "btn btn-outline-primary btn-sm"%>
+    <%= link_to t("go_to_home"), root_path, role:"button", class: "btn btn-outline-primary btn-sm"%>
   </p>
 </div>

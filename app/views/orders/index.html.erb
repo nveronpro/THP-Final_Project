@@ -17,8 +17,8 @@
       <tr>
         <td><%= order.start_date %></td>
         <td><%= order.end_date %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to t("show"), order %></td>
+        <td><%= link_to t("edit"), edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
