@@ -1,6 +1,6 @@
-[![Harry cover][product-logo]](https://the-final-project-production.herokuapp.com/)
 
 <p align="center">
+  <img src="app/assets/images/logo.webp" alt="Logo" width="80" height="80">
   <h3 align="center">Monthly</h3>
 
   <p align="center">
@@ -122,4 +122,3 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: app/assets/images/screen_readme.jpg
-[product-logo]: app/assets/images/logo.webp
