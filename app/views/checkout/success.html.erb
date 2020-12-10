@@ -1,12 +1,12 @@
 <div class="text-center my-4">
-  <h1 class="display-3">Merci!</h1>
-  <p class="lead"><strong>Veuillez vérifier votre adresse e-mail</strong> pour plus d'informations sur votre commande. Nous vous remercions de votre confiance.</p>
+  <h1 class="display-3"><%= t "thank_you" %></h1>
+  <p class="lead"><strong><%= t "check_email" %></strong> <%= t "for_more_info_thanks" %></p>
   <hr>
   <p>
-    Vous avez une question ? <%= link_to "Contactez-nous", contact_path%>
+    <%= t "have_question" %> <%= link_to t("contact_title"), contact_path%>
   </p>
   <p class="lead">
-    <%= link_to "Continuer vers la page d'accueil", root_path, role:"button", class: "btn btn-outline-primary btn-sm"%>
+    <%= link_to t("go_to_home"), root_path, role:"button", class: "btn btn-outline-primary btn-sm"%>
   </p>
 </div>
 
