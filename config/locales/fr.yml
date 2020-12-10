@@ -123,3 +123,4 @@ fr:
   end_date: "Date de fin : "
   orders_remaining: "Temp restant : "
   remaining_sentence: "Il vous reste "
+  name: "Votre nom"
