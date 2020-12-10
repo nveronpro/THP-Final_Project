@@ -114,9 +114,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Maria Malinar - [GitHub](https://github.com/mmolinar) - mariamolinaryarza@gmail.com
+Pierre Henry - [GitHub](https://github.com/HenPie) - pierre.henry21@outlook.fr
+Nicolas Veron - [GitHub](https://github.com/Arrvac) - arrvac@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/your_username/repo_name](https://github.com/Arrvac/THP-Final_Project)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
