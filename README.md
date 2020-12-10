@@ -1,8 +1,7 @@
 
 <p align="center">
   <img src="app/assets/images/logo.webp" alt="Logo" width="200" height="200">
-  <h3 align="center">Monthly</h3>
-
+  <h3 align="center">Monthly - Harry Cover</h3>
   <p align="center">
     <br />
     <a href="https://github.com/Arrvac/THP-Final_Project">View Demo</a>
