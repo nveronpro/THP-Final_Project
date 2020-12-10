@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   resources :items, path: 'product'
   resources :item_carts
   resources :charges
+  resources :contacts, only: [:new, :create]
   resource :carts
-
 
   get '/contact', to: 'static_pages#contact'
   get '/about', to: 'static_pages#about'

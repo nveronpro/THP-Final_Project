@@ -10,10 +10,8 @@ class StaticPagesController < ApplicationController
   end
 
   def galerie
-
   end
 
   def about
-
   end
 end

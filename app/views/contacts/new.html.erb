@@ -1,0 +1,47 @@
+<div class="container contact-form my-5">
+  <%= form_for :contact, url: contacts_path do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email, required: true %>
+    <br>
+    <%= f.label :message %>
+    <%= f.text_area :message, as: :text %>
+    <br>
+    <div class="hidden">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, hint: 'laisser ce champ vide' %>
+    </div>
+    <%= f.submit 'Envoyer Message', class: "button" %>
+  <% end %>
+</div>
+
+<!--form method="post">
+    <h3>Ecrivez nous un message</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" name="txtName" class="form-control" placeholder="Nom *" value="" />
+        </div>
+        <div class="form-group">
+         <input type="text" name="txtEmail" class="form-control" placeholder="Email *" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtPhone" class="form-control" placeholder="Portable *" value="" />
+        </div>
+        <div class="form-group">
+          <input type="submit" name="btnSubmit" class="btn btn-outline-primary" value="Envoyer Message" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtNickname" class="hidden" placeholder="Nickname *" value="" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <textarea name="txtMsg" class="form-control" placeholder="Votre Message *" style="width: 100%; height: 150px;"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+-->
