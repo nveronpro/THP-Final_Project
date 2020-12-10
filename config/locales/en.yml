@@ -137,4 +137,5 @@ en:
   week_days: "Monday to saturday :"
   week_hours: "8:00 AM - 8:00 PM"
   sunday: "Sunday : "
-  sunday_hours: "8:30 AM - 1:30 PM"
+  sunday_hours: "8:30 AM - 1:30 PM"  
+  name: "Your name"
