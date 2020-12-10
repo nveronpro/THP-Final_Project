@@ -106,7 +106,7 @@ Maria Malinar - [GitHub](https://github.com/mmolinar) - mariamolinaryarza@gmail.
 Pierre Henry - [GitHub](https://github.com/HenPie) - pierre.henry21@outlook.fr <br>
 Nicolas Veron - [GitHub](https://github.com/Arrvac) - arrvac@gmail.com <br>
 
-Project Link: [Monthly - Harry Cover](https://github.com/Arrvac/THP-Final_Project)
+Project Link: [Monthly - Harry Cover](https://github.com/Arrvac/THP-Final_Project)<br>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
