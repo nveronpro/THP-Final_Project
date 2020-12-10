@@ -4,7 +4,7 @@
   <h3 align="center">Monthly - Harry Cover</h3>
   <p align="center">
     <br />
-    <a href="https://github.com/Arrvac/THP-Final_Project">View Demo</a>
+    <a href="https://the-final-project-production.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/Arrvac/THP-Final_Project/issues">Report Bug</a>
     ·
