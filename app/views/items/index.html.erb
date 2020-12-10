@@ -19,9 +19,9 @@
                                     <% items.each do |item| %>
                                         <div class="card">
                                             <%if item.avatar.attached?%>
-                                                <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                                <%= image_tag item.avatar, alt: 'avatar', class: "card-img-index" %>
                                             <%else%>
-                                                <%= image_tag("default.jpg", class:"card-img-top") %>
+                                                <%= image_tag("default.jpg", class:"card-img-index") %>
                                             <%end%>
                                             <div class="card-body">
                                                 <h5 class="card-title"><%= item.title %></h5>
@@ -46,9 +46,9 @@
                             <% items.each do |item| %>
                                 <div class="card">
                                     <%if item.avatar.attached?%>
-                                        <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                        <%= image_tag item.avatar, alt: 'avatar', class: "card-img-index" %>
                                     <%else%>
-                                        <%= image_tag("default.jpg", class:"card-img-top") %>
+                                        <%= image_tag("default.jpg", class:"card-img-index") %>
                                     <%end%>
                                     <div class="card-body">
                                         <h5 class="card-title"><%= item.title %></h5>
@@ -72,9 +72,9 @@
                             <% items.each do |item| %>
                                 <div class="card">
                                     <%if item.avatar.attached?%>
-                                        <%= image_tag item.avatar, alt: 'avatar', class: "card-img-top" %>
+                                        <%= image_tag item.avatar, alt: 'avatar', class: "card-img-index" %>
                                     <%else%>
-                                        <%= image_tag("default.jpg", class:"card-img-top") %>
+                                        <%= image_tag("default.jpg", class:"card-img-index") %>
                                     <%end%>
                                     <div class="card-body">
                                         <h5 class="card-title"><%= item.title %></h5>
