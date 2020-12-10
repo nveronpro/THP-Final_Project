@@ -1,34 +1,22 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new
   end
 
   def create
-    @contact = Contact.new(params[:home])
-    @contact.request = request
     respond_to do |format|
-      if @contact.deliver
+      if AdminMailer.contact_email(email_params).deliver_now
         # re-initialize Home object for cleared form
-        @contact = Contact.new
-        format.html { render :create, notice: 'Votre message a ete bien envoye.'}
+        format.html { redirect_to root_path, notice: 'Votre message a ete bien envoye.'}
         format.json { render :create, status: :ok }
       else
-        format.html { render :new, notice: 'Echec, essayez a nouveau.' }
+        format.html { redirect_to new_contact_path, notice: 'Echec, essayez a nouveau.' }
         format.json { render :new, status: :unprocessable_entity }
       end
     end
   end
-  
+
+private
+  def email_params
+    params.require(:contact).permit(:name, :email, :message)
+  end
 end
-
-
-    #def create
-     # @contact = Contact.new(params[:contact])
-      #@contact.request = request
-      #if @contact.deliver
-       # flash[:error] = nil
-      #else
-       # flash[:error] = "Echec, essayez a nouveau."
-        #render :new
-      #end
-    #end

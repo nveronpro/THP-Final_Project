@@ -11,4 +11,14 @@ class AdminMailer < ApplicationMailer
       mail(to: f.email, subject: 'Harry Cover - Nouvelle commande')
     end      
   end
+
+  def contact_email(params)
+    @name = params[:name]
+    @email = params[:email]
+    @message = params[:message]
+    @admin = Admin.all
+    @admin.each do |f|
+      mail(to: f.email, subject: 'Harry Cover - Contact message')
+    end
+  end
 end

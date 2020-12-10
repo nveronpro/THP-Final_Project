@@ -1,5 +1,5 @@
 <div class="container contact-form my-5">
-  <%= form_for @contact do |f| %>
+  <%= form_for :contact, url: contacts_path do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
     <br>
@@ -17,8 +17,7 @@
   <% end %>
 </div>
 
-<!--
-<form method="post">
+<!--form method="post">
     <h3>Ecrivez nous un message</h3>
     <div class="row">
       <div class="col-md-6">
