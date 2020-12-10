@@ -1,7 +1,7 @@
 
 <p align="center">
   <img src="app/assets/images/logo.webp" alt="Logo" width="200" height="200">
-  <h3 align="center">Monthly - Harry Cover</h3>
+  <h3 align="center">Monthlee - Harry Cover</h3>
   <p align="center">
     <br />
     <a href="https://the-final-project-production.herokuapp.com/">View Demo</a>
@@ -106,7 +106,7 @@ Maria Malinar - [GitHub](https://github.com/mmolinar) - mariamolinaryarza@gmail.
 Pierre Henry - [GitHub](https://github.com/HenPie) - pierre.henry21@outlook.fr <br>
 Nicolas Veron - [GitHub](https://github.com/Arrvac) - arrvac@gmail.com <br>
 
-Project Link: [Monthly - Harry Cover](https://github.com/Arrvac/THP-Final_Project)<br>
+Project Link: [Monthlee - Harry Cover](https://github.com/Arrvac/THP-Final_Project)<br>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
