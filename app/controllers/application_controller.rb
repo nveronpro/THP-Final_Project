@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
         if !params[:locale]
             I18n.locale = locale_from_header
         else
-            I18n.locale = params[:locale]
+            I18n.locale = I18n.default_locale
         end
     end
 
