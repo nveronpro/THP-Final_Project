@@ -32,13 +32,19 @@ SubCategory.create(duration: 12)
 SubType.create(specification: "Weekly")
 SubType.create(specification: "Monthly")
 
-
-SubCategory.all.each do |category|
-    3.times do 
-        item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 1), description: "Hebdomadaire hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: category, sub_type: SubType.all.first, size: "350g", price_id: "price_1HvhPjLpDhDvbzmLGbrHK6FZ")
+name1 = Faker::Lorem.sentence(word_count: 1)
+name2 = Faker::Lorem.sentence(word_count: 1)
+name3 = Faker::Lorem.sentence(word_count: 1)
+SubType.all.each do |type|
+    4.times do |i|
+        
+        item_tmp = Item.create(title: name1, description: "Hebdomadaire hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: SubCategory.all[i], sub_type: type, size: "350g", price_id: "price_1HvhPjLpDhDvbzmLGbrHK6FZ")
         item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
 
-        item_tmp = Item.create(title: Faker::Lorem.sentence(word_count: 1), description: "Mensuel hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: category, sub_type: SubType.all.last, size: "350g", price_id: "price_1HvhPjLpDhDvbzmLGbrHK6FZ")
+        item_tmp = Item.create(title: name2, description: "Hebdomadaire hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: SubCategory.all[i], sub_type: type, size: "650g", price_id: "price_1HvhPjLpDhDvbzmLGbrHK6FZ")
+        item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
+
+        item_tmp = Item.create(title: name3, description: "Mensuel hsdgjasdkajkhgfhsgFKHGASKJDFHGAKHFKJAHGSDK", price: 42, sub_category: SubCategory.all[i], sub_type: type, size: "950g", price_id: "price_1HvhPjLpDhDvbzmLGbrHK6FZ")
         item_tmp.avatar.attach(io: File.open('test/fixtures/files/500x500.jpeg'), filename: '500x500.jpeg')
     end
 end
@@ -53,9 +59,7 @@ User.all.each do |user|
         order_tmp = Order.create(item: item_tmp, start_date: Time.new(2018, 1, 1), end_date: Time.new(2018, 1, 1))
         OrderUser.create(order: order_tmp, user: user)
     end
-    1.times do
-        ItemCart.create(item: Item.all.sample, cart: user.cart)
-    end
+    ItemCart.create(item: Item.all.sample, cart: user.cart)
 end
 
 

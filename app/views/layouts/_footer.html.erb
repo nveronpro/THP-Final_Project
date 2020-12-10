@@ -9,7 +9,7 @@
 
             <!-- Grid column -->
             <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-              <h6 class="footer-title mb-0 text-white">Connectez-vous avec nous sur les réseaux sociaux !</h6>
+              <h6 class="footer-title mb-0 text-white"><%= t "footer_title" %></h6>
             </div>
             <!-- Grid column -->
 
@@ -42,8 +42,7 @@
             <!-- Content -->
             <h6 class="text-uppercase font-weight-bold">Harry Cover</h6>
             <hr class="bg-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p>Ici, vous trouverez des valeurs sures mais aussi et surtout des produits frais, 
-            bien souvent locales, fabriqués en France et responsables !</p>
+            <p><%= t "footer_text" %></p>
 
           </div>
           <!-- Grid column -->
@@ -52,19 +51,19 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
             <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">À propos</h6>
+            <h6 class="text-uppercase font-weight-bold"><%= t "title_little_banner" %></h6>
             <hr class="bg-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-              <%= link_to "Acheter en ligne", "https://www.harry-cover.co/acheter-en-ligne", target: :_blank %>
+              <%= link_to t("buy_now"), "https://www.harry-cover.co/acheter-en-ligne", target: :_blank %>
             </p>
             <p>
-              <%= link_to "Notre histoire", about_path %>
+              <%= link_to t("about_title"), about_path %>
             </p>
             <p>
-              <%= link_to "Abonnements", abonnements_path %>
+              <%= link_to t("subscriptions"), abonnements_path %>
             </p>
             <p>
-              <%= link_to "La Presse", "https://www.harry-cover.co/la-presse", target: :_blank %>
+              <%= link_to t("press"), "https://www.harry-cover.co/la-presse", target: :_blank %>
             </p>
 
           </div>
@@ -74,13 +73,13 @@
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
             <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">Horaires</h6>
+            <h6 class="text-uppercase font-weight-bold"><%= t "opening_hours" %></h6>
             <hr class="bg-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-              Lundi au samedi :<br> 8H00 à 20h00
+              <%= t "week_days" %><br> <%= t "week_hours" %>
             </p>
             <p>
-              Dimanche : <br>8h30 à 13h30
+              <%= t "sunday" %><br><%= t "sunday_hours" %>
             </p>
 
           </div>

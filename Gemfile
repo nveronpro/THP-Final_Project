@@ -60,3 +60,5 @@ gem 'faker'
 gem "aws-sdk-s3", require: false
 gem 'rails_admin', '~> 2.0'
 gem 'friendly_id', '~> 5.4.0'
+# To send mails from Contact
+gem 'mail_form', '~> 1.8', '>= 1.8.1'

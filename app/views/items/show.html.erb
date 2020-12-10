@@ -16,7 +16,7 @@
         <%if @item.avatar.attached?%>
           <%= image_tag @item.avatar, alt: 'avatar', class: "img-fluid w-100" %>
         <%else%>
-          <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
+          <%= image_tag("default.jpg", class:"img-fluid w-100") %>
         <%end%>
       </div>
       <div class="col-md-7 my-2">
@@ -51,7 +51,15 @@
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Durée</strong></th>
-                <td><%= @item.sub_category.duration %> mois</td>
+
+                <% items = Item.where(title: @item.title, sub_type: @item.sub_type)%>
+                <% items.each do |item| %>
+                  <% if item != @item%>
+                    <td><%= link_to "#{item.sub_category.duration} Months", item_path(item), class:"btn btn-primary btn-sm mb-2" %></td>  
+                  <% else %>
+                    <td><%= link_to "#{item.sub_category.duration} Months", item_path(item), class:"btn btn-secondary btn-sm mb-2" %></td>  
+                  <% end %>
+                <% end %>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Type</strong></th>
