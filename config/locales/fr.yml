@@ -1,6 +1,6 @@
 fr:
   remember_me: "Se souvenir de moi"
-  title: "Harry Cover s'invite chez vous !"
+  title_big_banner: "Harry Cover s'invite chez vous !"
   text_big_banner: "Votre primeur de qualité dans Paris 7ème. Des fruits et légumes frais chaque semaine ou chaque mois !"
   title_card_price: "Nos abonnements populaires"
   subtitle_card_price: "Tous nos paniers contiennent des fruits et légumes de la plus haute qualité, de saison, sélectionnés avec soin par notre équipe rien que pour vous."
@@ -46,25 +46,24 @@ fr:
   testi_thrd_text: "Vous souhaitez être livré chaque semaine ? Ou bien une fois par mois ? Profitez de nos différents abonnements pour combler à toutes envies."
   about_title: "Notre histoire"
   about_text_1: "Réunis dans le même amour du beau et du bon, Gérard et Julien son fils, sont 
-      heureux de vous accueillir et de vous faire découvrir la diversité des origines et des saveurs qui 
-      leur ont apporté la reconnaissance de grands chefs et critiques gastronomiques."
+  heureux de vous accueillir et de vous faire découvrir la diversité des origines et des saveurs qui 
+  leur ont apporté la reconnaissance de grands chefs et critiques gastronomiques."
   about_title_h2: "Notre Activite"
   about_text_2: "Harry Cover est  un primeur tenu par une famille où, depuis 5 générations, nous travaillons avec 
-      les meilleurs professionnels et sélectionnons des produits de la meilleure qualité pour votre table. Tous les matins Gérard, 
-      fort de son expérience de plus de 30 ans, sélectionne les meilleurs produits avec toujours la même exigence de qualité et 
-      d'authenticité pour vous apporter au coeur du 7ème le meilleur de Rungis.Cette passion l'amène à vous apporter 
-      toujours plus de fraîcheur et de service et à vous proposer, outre les produits sélectionnés quotidiennement à Rungis, 
-      les préparations de ces produits."
+  les meilleurs professionnels et sélectionnons des produits de la meilleure qualité pour votre table. Tous les matins Gérard, 
+  fort de son expérience de plus de 30 ans, sélectionne les meilleurs produits avec toujours la même exigence de qualité et 
+  d'authenticité pour vous apporter au coeur du 7ème le meilleur de Rungis. Cette passion l'amène à vous apporter 
+  toujours plus de fraîcheur et de service et à vous proposer, outre les produits sélectionnés quotidiennement à Rungis, 
+  les préparations de ces produits."
   about_text_3: "De quoi ravir les épicuriens pressés :"
   about_li_1: "légumes et fruits lavés, coupés, prêts à être cuisinés"
   about_li_2: "jus de fruits pressés plusieurs fois par jour pour un maximum de fraîcheur et de vitamines,"
   about_li_3: "corbeilles de fruits ou de légumes"
   about_li_4: "les soupes préparées dans notre cuisine"
   about_li_5: "les légumes cuits vapeur, prêts à être réchauffés pour une alimentation saine et rapide"
-  about_text_4: "Vous êtes invités ? Apportez l'apéritif, commandez l'une de nos corbeilles de crudités !!!
-      Pensez au goûter bio et sain pour les enfants, faites leur découvrir  "les gourmandises d'Harry" !"
+  about_text_4: "Vous êtes invités ? Apportez l'apéritif, commandez l'une de nos corbeilles de crudités !!! Pensez au goûter bio et sain pour les enfants, faites leur découvrir les gourmandises d'Harry !"
   contact_title: "Ecrivez nous un message"
-  name: "nom"
+  name: "Nom"
   phone_number: "Portable"
   cta_send_message: "Envoyer Message"
-  contact_message: "Votre Message"
+  contact_message: "Message"

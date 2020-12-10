@@ -30,8 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  title: "Harry Cover comes to your home!"
+  title_big_banner: "Harry Cover comes to your home!"
   text_big_banner: "Your greengrocer in Paris 7th. Fresh fruits and vegetables every week or every month!"
   title_card_price: "Our popular subscriptions"
   subtitle_card_price: "All our baskets contain fruits and vegetables of the highest quality, in season, carefully selected by our team just for you."
@@ -77,15 +76,15 @@ en:
   testi_thrd_text: "You wish to be delivered every week? Or once a month? Take advantage of our different subscriptions to satisfy all your desires."
   about_title: "Our story"
   about_text_1: "Gathered in the same love of the beautiful and the good, Gerard and Julien his son, are 
-      happy to welcome you and to make you discover the diversity of origins and flavours which 
-      have brought them the recognition of great chefs and food critics."
+  happy to welcome you and to make you discover the diversity of origins and flavours which 
+  have brought them the recognition of great chefs and food critics."
   about_title_h2: "Our activity"
   about_text_2: "Harry Cover is a family-run business where, for 5 generations, we have been working with 
-      the best professionals and select the best quality products for your table. Every morning Gérard, 
-      with more than 30 years of experience, selects the best products with always the same quality requirements and 
-      of authenticity to bring you the best of Rungis in the heart of the 7th arrondissement. 
-      always more freshness and service and to offer you, in addition to the products selected daily at Rungis, 
-      preparations of these products."
+  the best professionals and select the best quality products for your table. Every morning Gérard, 
+  with more than 30 years of experience, selects the best products with always the same quality requirements and 
+  of authenticity to bring you the best of Rungis in the heart of the 7th arrondissement. 
+  always more freshness and service and to offer you, in addition to the products selected daily at Rungis, 
+  preparations of these products."
   about_text_3: "Enough to delight epicureans in a hurry:"
   about_li_1: "vegetables and fruits washed, cut, ready to be cooked"
   about_li_2: "fruit juices pressed several times a day for maximum freshness and vitamins,"
@@ -93,9 +92,9 @@ en:
   about_li_4: "soups prepared in our kitchen"
   about_li_5: "steamed vegetables, ready to be reheated for a fast and healthy diet"
   about_text_4: "Are you invited? Bring the aperitif, order one of our crudités baskets !!!
-      Think about the organic and healthy snack for children, let them discover "Harry's delicacies"!"
+  Think about the organic and healthy snack for children, let them discover Harry's delicacies!"
   contact_title: "Write us a message"
-  name: "name"
+  name: "Name"
   phone_number: "Telephone"
   cta_send_message: "Send Message"
-  contact_message: "Your Message"
+  contact_message: "Message"
