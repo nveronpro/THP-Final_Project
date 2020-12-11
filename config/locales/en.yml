@@ -66,8 +66,8 @@ en:
   rea_first_text: "In our Parisian shop"
   rea_scd_title: "SHIPPED WITH CARE"
   rea_scd_text: "In a custom-made packaging, 100% adapted"
-  rea_thrd_title: "QUICK ANS SECURE ONLINE PURCHASE"
-  rea_thrd_text: "Find the subscription that fits to you"
+  rea_thrd_title: "QUICK AND SECURE ONLINE PURCHASE"
+  rea_thrd_text: "Find the best subscription for you"
   testi_first_title: "The first Wednesday of the month"
   testi_first_text: "Receive your fruit and vegetable basket every first Wednesday of the month. If you have opted for a weekly subscription, you will receive your basket every Wednesday."
   testi_scd_title: "Postpone a subscription"
@@ -129,8 +129,9 @@ en:
   log_in: "Log in"
   create_account: "Create account"
   footer_title: "Connect with us on social networks!"
-  footer_text: "Here you will find safe values but also and especially fresh products, 
-  often local, made in France and responsible!"
+  footer_text: "Our promise to you: we deliver the freshest, seasonal produce, hand picked daily at Rungis. 
+  Mostly sourced in France, 
+  always optimal quality."
   buy_now: "Buy online"
   press: "Press releases"
   opening_hours: "Opening hours"
@@ -152,6 +153,8 @@ en:
   subscription: "Subscription"
   start_date: "Start Date: "
   end_date: "End Date: "
+  start_date_pause: "Start Date of the pause: "
+  end_date_pause: "End Date of the pause: "
   orders_remaining: "Still to come: "
   remaining_sentence: "You'll enjoy fresh produce for "
   thank_order: "Thank you for your subscription! "

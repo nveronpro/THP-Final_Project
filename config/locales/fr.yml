@@ -121,6 +121,8 @@ fr:
   subscription: "Abonnement"
   start_date: "Date de debut : "
   end_date: "Date de fin : "
+  start_date_pause: "Date de debut de la pause : "
+  end_date_pause: "Date de fin de la pause: "
   orders_remaining: "Temp restant : "
   remaining_sentence: "Il vous reste "
   thank_order: "Merci pour votre commande "

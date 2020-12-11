@@ -21,4 +21,12 @@ class AdminMailer < ApplicationMailer
       mail(to: f.email, subject: 'Harry Cover - Contact message')
     end
   end
+
+  def skipmonth_email(order)
+    @order = order
+    @admin = Admin.all
+    @admin.each do |f|
+      mail(to: f.email, subject: 'Harry Cover - Contact message')
+    end
+  end
 end
