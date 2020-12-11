@@ -31,7 +31,7 @@
                       <div class="d-flex justify-content-between">
                         <div>
                           <h5><%= link_to item_select.title, item_path(item_select.id) %></h5>                          
-                          <p class="mb-2 text-muted text-uppercase small"><%= item_select.sub_category.duration %></p>
+                          <p class="mb-2 text-muted text-uppercase small"><%= t "duration" %>: <%= item_select.sub_category.duration %> <%= t "month" %></p>                          
                           <p class="mb-3 text-muted text-uppercase small"><%= item_select.description %></p>
                         </div>                        
                       </div>
@@ -56,7 +56,7 @@
 
                 <h5 class="mb-4"><%= t "scheduled_delivery"%></h5>
 
-                <p class="mb-0"><%= t "delivery_in_cart" %></p>
+                <p class="mb-0"><%= t "delivery_in_carts" %></p>
               </div>
             </div>
             <!-- Card -->

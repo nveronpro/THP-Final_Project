@@ -144,7 +144,7 @@ fr:
   cart: "Panier"
   delete_product: "Supprimer le produit"
   scheduled_delivery: "Livraison prévue :"
-  delivery_in_cart: "Chaque premier mercredi du mois pour les aboonements mensuels. Chaque mercredi pour les abonnements hebdomadaires."
+  delivery_in_carts: "Chaque premier mercredi du mois pour les aboonements mensuels. Chaque mercredi pour les abonnements hebdomadaires."
   we_accept: "Nous acceptons"
   total: "Montant total"
   subtotal: "Sous-total"
@@ -182,3 +182,4 @@ fr:
   product_atc: "Produit ajouté au panier"
   product_atc_fail: "Produit non ajouté"
   order_created: "Votre commande a bien été créé"
+  past_orders_html: "Commandes</i>passées"
