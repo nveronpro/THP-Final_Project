@@ -183,3 +183,18 @@ fr:
   product_atc_fail: "Produit non ajouté"
   order_created: "Votre commande a bien été créé"
   past_orders_html: "Commandes</i>passées"
+  date:
+    month_names:
+      - ~
+      - Janvier
+      - Fevrier
+      - Mars
+      - Avril
+      - Mais
+      - Juin
+      - Juillet
+      - Aout
+      - Septembre
+      - Octobre
+      - Novembre
+      - Decembre
