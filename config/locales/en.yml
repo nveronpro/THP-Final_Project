@@ -210,3 +210,8 @@ en:
   not_satisfied: "You are not satisfied?"
   new_password: "New password"
   reset_password: "Reset my password"
+  message_sent: "Your message has been sent successfully."
+  issue_message_sent: "Fail, try again."
+  product_atc: "Product added to cart"
+  product_atc_fail: "Product not added"
+  order_created: "Your order has been created"

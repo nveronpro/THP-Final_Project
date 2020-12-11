@@ -177,3 +177,8 @@ fr:
   not_satisfied: "Vous n'êtes pas satisfait ?"
   new_password: "Nouveau mot de passe"
   reset_password: "Rétablir mon mot de passe"
+  message_sent: "Votre message a ete bien envoyé."
+  issue_message_sent: "Échec, essayez à nouveau."
+  product_atc: "Produit ajouté au panier"
+  product_atc_fail: "Produit non ajouté"
+  order_created: "Votre commande a bien été créé"
