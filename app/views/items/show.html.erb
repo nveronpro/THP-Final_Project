@@ -73,7 +73,7 @@
           <% if current_user.cart.items.first %> 
             <%= t "already_into_cart" %>
           <% else %>
-            <%= link_to item_item_carts_path(@item), class:"btn btn-primary btn-md mr-1 mb-2" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span><%= t "atc" %><% end %>      
+            <%= link_to item_item_carts_path(@item), method: "POST", class:"btn btn-primary btn-md mr-1 mb-2" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span><%= t "atc" %><% end %>      
           <% end %> 
         <% else %>
           <%= link_to t("verif_atc"), new_user_session_path %>

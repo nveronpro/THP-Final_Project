@@ -22,6 +22,6 @@ class ItemCartsController < ApplicationController
   private 
 
   def find_item
-      @item = Item.friendly.find(params[:id])
+      @item = Item.friendly.find(params[:item_id])
   end
 end
