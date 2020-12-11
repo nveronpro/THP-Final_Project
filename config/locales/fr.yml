@@ -161,3 +161,5 @@ fr:
   complete_profile: "Complétez votre profile"
   pay_now: "Payer maintenant"
   current_password: "Votre mot de passe"
+  sign_up: "S'inscrire"
+  forgot_password: "Mot de passe oublié ?"
