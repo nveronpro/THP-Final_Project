@@ -13,8 +13,12 @@ Rails.application.routes.draw do
 
   resource :users, path: 'profile'
   resources :orders
-  resources :items, path: 'product'
-  resources :item_carts
+  resources :items, path: 'product' do
+    resources :item_carts, only: [:create]
+  end
+  resources :item_carts, except: [:create]
+
+
   resources :charges
   resources :contacts, only: [:new, :create]
   resource :carts
@@ -23,7 +27,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/information', to: 'static_pages#info'
   get '/subscription', to: 'items#index'
-  post '/item_carts/:id', to: 'item_carts#create', as: 'panier'
+  #post '/item_carts/:id', to: 'item_carts#create', as: 'panier'
 
   scope '/checkout' do 
     post 'create', to: 'checkout#create', as: 'checkout_create'

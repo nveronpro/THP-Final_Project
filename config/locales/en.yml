@@ -152,6 +152,8 @@ en:
   subscription: "Subscription"
   start_date: "Start Date: "
   end_date: "End Date: "
+  start_date_pause: "Start Date of the pause: "
+  end_date_pause: "End Date of the pause: "
   orders_remaining: "Still to come: "
   remaining_sentence: "You'll enjoy fresh produce for "
   name: "Your name"
