@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Votre commande a bien été créé' }
+        format.html { redirect_to @order, notice: t("order_created") }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -35,10 +35,10 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if AdminMailer.skipmonth_email(@order).deliver_now
         # re-initialize Home object for cleared form
-        format.html { redirect_to root_path, notice: 'Votre message a ete bien envoye.'}
+        format.html { redirect_to root_path, notice: t("message_sent")}
         format.json { render :create, status: :ok }
       else
-        format.html { redirect_to new_contact_path, notice: 'Echec, essayez a nouveau.' }
+        format.html { redirect_to new_contact_path, notice: t("issue_message_sent") }
         format.json { render :new, status: :unprocessable_entity }
       end
     end
