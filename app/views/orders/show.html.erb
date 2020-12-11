@@ -9,7 +9,7 @@
         <%end%>
       </div>
       <div class="col-md-7">
-        <h5>Abonnement <%= @order.item.sub_category.duration %> mois</h5>
+        <h5><%= t "subscription" %><%= @order.item.sub_category.duration %><%= t "month" %></h5>
         <hr class="hr-product my-4">
         <p class="mb-2 text-muted text-uppercase small"><%= @order.item.title %></p>
         <p class="pt-1"><%= @order.item.description %></p>
@@ -17,24 +17,36 @@
           <table class="table table-sm table-borderless mb-0">
             <tbody>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Start date:</strong></th>
+                <th class="pl-0 w-25" scope="row"><strong><%= t "start_date" %></strong></th>
                 <td><%= @order.start_date.strftime("%F") %></td>
               </tr>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>End date:</strong></th>
+                <th class="pl-0 w-25" scope="row"><strong><%= t "end_date" %></strong></th>
                 <td><%= @order.end_date.strftime("%F") %></td>
               </tr>
+              <% if @order.start_pause %>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Temp restant:</strong></th>
-                <td>Il vous reste <%= (@order.end_date.year * 12 + @order.end_date.month) - (@order.start_date.year * 12 + @order.start_date.month) %> mois</td>
-
+                <th class="pl-0 w-25" scope="row"><strong><%= t "start_date_pause" %></strong></th>
+                <td><%= @order.start_pause.strftime("%F") %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong><%= t "end_date_pause" %></strong></th>
+                <td><%= @order.end_pause.strftime("%F") %></td>
+              </tr>
+              <% end %>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong><%= t "orders_remaining" %></strong></th>
+                <td><%= t "remaining_sentence" %><%= (@order.end_date.year * 12 + @order.end_date.month) - (@order.start_date.year * 12 + @order.start_date.month) %><%= t "month" %></td>
               </tr>
             </tbody>
           </table>
           <br><br><br><br><br><br>
-          <%= link_to "Skip the next Month", "#", :class =>"btn btn-primary" %>
+          <% if @order.skip_month? == true %>
+          <% else %>
+            <%= link_to t("info_scd_h2"), order_path(@order), method: "PUT", :class =>"btn btn-primary" %>
+            <hr>
+          <% end %>
         </div>
-        <hr>
       </div>
     </div>
   </div>

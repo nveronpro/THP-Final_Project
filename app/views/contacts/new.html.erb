@@ -1,19 +1,31 @@
 <div class="container contact-form my-5">
   <%= form_for :contact, url: contacts_path do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true %>
-    <br>
-    <%= f.label :email %>
-    <%= f.text_field :email, required: true %>
-    <br>
-    <%= f.label :message %>
-    <%= f.text_area :message, as: :text %>
-    <br>
-    <div class="hidden">
-      <%= f.label :nickname %>
-      <%= f.text_field :nickname, hint: 'laisser ce champ vide' %>
+  <h3><%= t "contact_title" %></h3>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+          <%= f.label t("name") %>
+          <%= f.text_field :name, required: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, required: true, class: "form-control" %>
+      </div>      
+        <div class="hidden">
+          <%= f.label :nickname %>
+          <%= f.text_field :nickname, hint: 'laisser ce champ vide' %>
+        </div>
+      <div class="form-group">
+        <%= f.submit t("cta_send_message"), class: "btn btn-outline-primary" %>
+      </div>
     </div>
-    <%= f.submit 'Envoyer Message', class: "button" %>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :message %>
+        <%= f.text_area :message, as: :text, class: "form-control", style: "width: 100%; height: 150px;" %>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
 

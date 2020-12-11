@@ -2,9 +2,9 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <%= link_to "Accueil", accueil_path %>
+        <%= link_to "Accueil", root_path %>
       </li>
-      <li class="breadcrumb-item"><%= link_to "Abonnements", abonnements_path %></li>
+      <li class="breadcrumb-item"><%= link_to "Abonnements", subscription_path %></li>
       <li class="breadcrumb-item active" aria-current="page">Produit</li>
     </ol>
   </nav>
@@ -55,9 +55,9 @@
                 <% items = Item.where(title: @item.title, sub_type: @item.sub_type)%>
                 <% items.each do |item| %>
                   <% if item != @item%>
-                    <td><%= link_to "#{item.sub_category.duration} Months", item_path(item), class:"btn btn-primary btn-sm mb-2" %></td>  
-                  <% else %>
                     <td><%= link_to "#{item.sub_category.duration} Months", item_path(item), class:"btn btn-secondary btn-sm mb-2" %></td>  
+                  <% else %>
+                    <td><%= link_to "#{item.sub_category.duration} Months", item_path(item), class:"btn btn-primary btn-sm mb-2" %></td>  
                   <% end %>
                 <% end %>
               </tr>
@@ -73,7 +73,7 @@
           <% if current_user.cart.items.first %> 
             Un Produit est déjà dans votre panier
           <% else %>
-            <%= link_to panier_path(@item), class:"btn btn-primary btn-md mr-1 mb-2", method: "POST" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Ajouter au panier<% end %>      
+            <%= link_to item_item_carts_path(@item), class:"btn btn-primary btn-md mr-1 mb-2" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Ajouter au panier<% end %>      
           <% end %> 
         <% else %>
           <%= link_to 'Merci de vous vous connecter si vous voulez ajouter celci a votre panier.', new_user_session_path %>

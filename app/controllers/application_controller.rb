@@ -2,16 +2,18 @@ class ApplicationController < ActionController::Base
     before_action :configure_devise_parameters, if: :devise_controller?
     before_action :set_locale
 
-    def set_locale
-        if !params[:locale]
-            I18n.locale = locale_from_header
-        else
-            I18n.locale = params[:locale]
-        end
+    def set_locale      
+        I18n.locale = locale_from_header || I18n.default_locale                    
     end
 
-    def locale_from_header
-        request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first
+    def locale_from_header        
+        if request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first.include? "en"
+            I18n.locale = :en           
+        elsif request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first.include? "fr"
+            I18n.locale = :fr           
+        else
+            return nil
+        end        
     end
 
     def configure_devise_parameters
