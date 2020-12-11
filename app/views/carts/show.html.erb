@@ -14,7 +14,7 @@
             <div class="card mb-4">
               <div class="card-body">
 
-                <h5 class="mb-4">Panier (<span><%= @cart.items.length %></span> abonnement)</h5>
+                <h5 class="mb-4"><%= t "cart" %> (<span><%= @cart.items.length %></span> <%= t "subscription" %>)</h5>
                 <% @cart.items.each do |item_select|%>
                 <div class="row mb-4">
                   <div class="col-md-5 col-lg-3 col-xl-3">
@@ -30,15 +30,14 @@
                     <div>
                       <div class="d-flex justify-content-between">
                         <div>
-                          <h5><%= link_to item_select.title, item_path(item_select.id) %></h5>
-                          <p class="mb-3 text-muted text-uppercase small">Shirt - blue</p>
-                          <p class="mb-2 text-muted text-uppercase small">Color: blue</p>
+                          <h5><%= link_to item_select.title, item_path(item_select.id) %></h5>                          
+                          <p class="mb-2 text-muted text-uppercase small"><%= item_select.sub_category.duration %></p>
                           <p class="mb-3 text-muted text-uppercase small"><%= item_select.description %></p>
                         </div>                        
                       </div>
                       <div class="d-flex justify-content-between align-items-center">
                         <div>
-                          <i class="fas fa-trash-alt mr-1"></i> <%= link_to 'Supprimer le produit', item_cart_path(item_select), method: :delete, class: "card-link-secondary small text-uppercase mr-3" %>
+                          <i class="fas fa-trash-alt mr-1"></i> <%= link_to t("delete_product"), item_cart_path(item_select), method: :delete, class: "card-link-secondary small text-uppercase mr-3" %>
                         </div>
                         <p class="mb-0"><span><strong><%= item_select.price %>€</strong></span></p>
                       </div>
@@ -55,9 +54,9 @@
             <div class="card mb-4">
               <div class="card-body">
 
-                <h5 class="mb-4">Livraison prévue :</h5>
+                <h5 class="mb-4"><%= t "scheduled_delivery"%></h5>
 
-                <p class="mb-0">Chaque premier mercredi du mois pour les aboonements mensuels. Chaque mercredi pour les abonnements hebdomadaires.</p>
+                <p class="mb-0"><%= t "delivery_in_cart" %></p>
               </div>
             </div>
             <!-- Card -->
@@ -65,7 +64,7 @@
             <!-- Card -->
             <div class="card mb-4">
               <div class="card-body">
-                <h5 class="mb-4">Nous acceptons</h5>
+                <h5 class="mb-4"><%= t "we_accept" %></h5>
                 <%= image_tag("visa.svg", :alt => "Visa", class:"mr-2", width:"45px") %>
                 <%= image_tag("amex.svg", :alt => "Visa", class:"mr-2", width:"45px") %>
                 <%= image_tag("mastercard.svg", :alt => "Visa", class:"mr-2", width:"45px") %>
@@ -83,44 +82,44 @@
             <div class="card mb-4">
               <div class="card-body">
 
-                <h5 class="mb-3">Montant total</h5>
+                <h5 class="mb-3"><%= t "total" %></h5>
 
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                    Sous-total
+                    <%= t "subtotal" %>
                     <span><%= @cart.total_price %>€</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                    Livraison
-                    <span>Offerte</span>
+                    <%= t "delivery_in_cart" %>
+                    <span><%= t "free" %></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                     <div>
-                      <strong>Montant total</strong>
+                      <strong><%= t "total" %></strong>
                       <strong>
-                        <p class="mb-0">(TVA inclue)</p>
+                        <p class="mb-0"><%= t "vat_included" %></p>
                       </strong>
                     </div>
                     <span><strong><%= @cart.total_price %>€</strong></span>                  
                   </li>                  
                 </ul>
                 <% if @cart.total_price <= 0 %>
-                  <p>Votre panier est vide</p>
+                  <p><%= t "cart_empty" %></p>
                 <% else %>
                   <% if current_user.adress.blank? || current_user.city.blank? || current_user.zipcode.blank? %>
-                    <h6 >Address actuelle:</h6>
-                    Adresse: <i><%= current_user.adress %></i><br>
+                    <h6><%= t "current_address" %></h6>
+                    <%= t "address" %> <i><%= current_user.adress %></i><br>
                     <% if current_user.address_sup.blank? == false %>
-                      Adress complementaire: <i><%= current_user.address_sup %></i><br>
+                      <%= t "additional_address" %> <i><%= current_user.address_sup %></i><br>
                     <% end %>
                     <% if current_user.door_code.blank? == false %>
-                      Code de porte: <i><%= current_user.door_code %></i><br>
+                      <%= t "door_code" %> <i><%= current_user.door_code %></i><br>
                     <% end %>
-                    Ville: <i><%= current_user.city %></i><br>
-                    Code postale: <i><%= current_user.zipcode %></i><br><br>
-                    <%= link_to 'Complétez votre profile', edit_users_path, class: "btn btn-danger" %>
+                    <%= t "city" %> <i><%= current_user.city %></i><br>
+                    <%= t "zip_code" %> <i><%= current_user.zipcode %></i><br><br>
+                    <%= link_to t("complete_profile"), edit_users_path, class: "btn btn-danger" %>
                   <% else %>
-                    <%= button_to 'Payer maintenant', checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary", id: "checkout-button" %>
+                    <%= button_to t("pay_now"), checkout_create_path, method: :post, params: {cart_id: @cart.id}, remote: true, class: "btn btn-primary", id: "checkout-button" %>
                   <% end %>
                 <% end %>
                 <!-- button_to "procéder au paiement", new_charge_path, class: "btn btn-primary btn-block", method: "get" -->
