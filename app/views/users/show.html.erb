@@ -85,7 +85,7 @@
                                             <% else %>
                                                 <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
                                             <% end %>
-                                            <h5> <%= t "subs_of" %>Abonnements de <%= order.item.sub_category.duration%> <%= t "month" %> </h5>
+                                            <h5> <%= t "subs_of" %> <%= order.item.sub_category.duration%> <%= t "month" %> </h5>
                                             <p> <%= t "date_from" %> <%= order.start_date.strftime("%F") %> <%= t "date_to" %> <%= order.end_date.strftime("%F") %></p>
                                             <%= link_to t("cta_see_more"), order_path(order) , class:"btn btn-primary stretched-link" %>
                                             </div>
