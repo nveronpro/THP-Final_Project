@@ -6,16 +6,16 @@
         <div class="col-md-8">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="text-right">Edit Profile</h6>
+                    <h6 class="text-right"><%= t "edit_profile"%></h6>
                 </div>
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                   <%= render "devise/shared/error_messages", resource: resource %>
                   <div class="row mt-2">
                       <div class="col-md-6">
-                        <%= f.text_field :first_name, autofocus: true, autocomplete: "First Name", class: "form-control", placeholder: :first_name %>
+                        <%= f.text_field :first_name, autofocus: true, autocomplete: "First Name", class: "form-control", placeholder: t("name") %>
                       </div>
                       <div class="col-md-6">
-                        <%= f.text_field :last_name, autofocus: true, autocomplete: "Last Name", class: "form-control", placeholder: :last_name %>
+                        <%= f.text_field :last_name, autofocus: true, autocomplete: "Last Name", class: "form-control", placeholder: t("last_name") %>
                       </div>
                   </div>
                   <div class="row mt-3">
@@ -23,63 +23,63 @@
                         <%= f.text_field :email, autofocus: true, autocomplete: "Email", class: "form-control", placeholder: :email %>
                       </div>
                       <div class="col-md-6">
-                        <%= f.text_field :phone_number, autofocus: true, autocomplete: "Phone_number", class: "form-control", placeholder: :phone_number %>
+                        <%= f.text_field :phone_number, autofocus: true, autocomplete: "Phone_number", class: "form-control", placeholder: t("phone_number") %>
                       </div>
                   </div>
                   <div class="row mt-3">
                       <div class="col-md-6">
-                        <%= f.text_field :adress, autofocus: true, autocomplete: "Adress", class: "form-control", placeholder: :adress %>
+                        <%= f.text_field :adress, autofocus: true, autocomplete: "Adress", class: "form-control", placeholder: t("address") %>
                       </div>
                       <div class="col-md-6">
-                        <%= f.text_field :address_sup, autofocus: true, autocomplete: "Address_sup", class: "form-control", placeholder: :address_sup %>
-                      </div>
-                  </div>
-                  <div class="row mt-3">
-                      <div class="col-md-6">
-                        <%= f.text_field :door_code, autofocus: true, autocomplete: "Door_code", class: "form-control", placeholder: :door_code %>
-                      </div>
-                      <div class="col-md-6">
-                        <%= f.text_field :city, autofocus: true, autocomplete: "City", class: "form-control", placeholder: :city %>
+                        <%= f.text_field :address_sup, autofocus: true, autocomplete: "Address_sup", class: "form-control", placeholder: t("additional_address") %>
                       </div>
                   </div>
                   <div class="row mt-3">
                       <div class="col-md-6">
-                        <%= f.text_field :zipcode, autofocus: true, autocomplete: "Zipcode", class: "form-control", placeholder: :zipcode %>
+                        <%= f.text_field :door_code, autofocus: true, autocomplete: "Door_code", class: "form-control", placeholder: t("door_code") %>
+                      </div>
+                      <div class="col-md-6">
+                        <%= f.text_field :city, autofocus: true, autocomplete: "City", class: "form-control", placeholder: t("city") %>
+                      </div>
+                  </div>
+                  <div class="row mt-3">
+                      <div class="col-md-6">
+                        <%= f.text_field :zipcode, autofocus: true, autocomplete: "Zipcode", class: "form-control", placeholder: t("zip_code") %>
                       </div>
                   </div>
                   <div class="d-flex justify-content-between align-items-center mb-3 mt-5">
-                    <h6 class="text-right">Change your password</h6>
+                    <h6 class="text-right"><%= t "change_password" %></h6>
                   </div>
                   <div class="row mt-3">
                     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                      <div><%= t "waiting_confirm" %> <%= resource.unconfirmed_email %></div>
                     <% end %>
                     <div class="col-md-6">
-                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "leave blank if you don't want to change it" %>
+                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t("leave_blank") %>
                       <% if @minimum_password_length %>
-                        <em><%= @minimum_password_length %> characters minimum</em>
+                        <em><%= @minimum_password_length %> <%= t "min_chara" %></em>
                       <% end %>
                     </div>
                     <div class="col-md-6">
-                      <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class: "form-control", placeholder: "Confirm new password" %>
+                      <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class: "form-control", placeholder: t("confirm_password") %>
                     </div>
                   </div>
                   <div class="d-flex justify-content-between align-items-center mb-3 mt-5">
-                    <h6 class="text-right">Confirme your edit</h6>
+                    <h6 class="text-right"><%= t "confirm_edit" %></h6>
                   </div>
                   <div class="row mt-3">
                     <div class="col-md-6 form-group">
-                      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "Current password for confirm your edit" %>
+                      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: t("current_password_edit") %>
                     </div>
                     <div class="col-md-6 text-right">
-                      <%= f.submit "Mettre à jour", class: "btn btn-primary" %>
+                      <%= f.submit t("update_profile"), class: "btn btn-primary" %>
                     </div>
                   </div>
                 <% end %>
                 <div class="mt-5 mb-5 dropdown-divider"></div>
-                <h3 class="h4">Supprimer mon compte</h3>
+                <h3 class="h4"><%= t "delete_account" %></h3>
                 <div class="form-inline mb-4">
-                  <p class="pt-2 mt-3">Vous n'êtes pas satisfait ? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete, class: "btn btn-danger btn-sm mx-3 mt-3" %></p>
+                  <p class="pt-2 mt-3"><%= t "not_satisfied" %> <%= button_to t("delete_account"), registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete, class: "btn btn-danger btn-sm mx-3 mt-3" %></p>
                 </div>
             </div>
         </div>

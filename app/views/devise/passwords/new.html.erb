@@ -3,7 +3,7 @@
     <div class="row text-center">
       <div class="col-md-6 offset-md-3"-->
         <div class="form-signin my-5">
-          <h1 class="h3 mb-3 font-weight-normal">Mot de passe oublié ?</h1><br>
+          <h1 class="h3 mb-3 font-weight-normal"><%= t "forgot_password" %></h1><br>
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -13,7 +13,7 @@
               </div>
 
               <div class="actions">
-                <%= f.submit "Re-etablir mon password", class: "btn btn-primary btn-block" %>
+                <%= f.submit t("reset_password"), class: "btn btn-primary btn-block" %>
               </div>
             <% end %>
             <br>

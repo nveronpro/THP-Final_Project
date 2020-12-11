@@ -3,7 +3,7 @@
     <div class="row text-center">
       <div class="col-md-6 offset-md-3"-->
         <div class="form-signin my-5">
-          <h1 class="h3 mb-3 font-weight-normal">Inscrivez vous pour commencer a recevoir votre abonnement ! Sign Up</h1>
+          <h1 class="h3 mb-3 font-weight-normal"><%= t "sign_up_devise" %></h1>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
                 <div class="form-group">
@@ -13,19 +13,19 @@
 
                 <div class="form-group">
                   <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <em>(<%= @minimum_password_length %> <%= t "min_chara" %>)</em>
                   <% end %><br />
                   <% f.label :password %>
-                  <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password" %>
+                  <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t("password") %>
                 </div>
 
                 <div class="form-group">
                   <% f.label :password_confirmation %>
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: t("confirm_password") %>
                 </div>
 
                 <div class="actions">
-                  <%= f.submit "S'inscrire", class: "btn btn-primary btn-block" %>
+                  <%= f.submit t("sing_up"), class: "btn btn-primary btn-block" %>
                 </div>
               <% end %>
               <br>

@@ -2,10 +2,10 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <%= link_to "Accueil", root_path %>
+        <%= link_to t("home"), root_path %>
       </li>
-      <li class="breadcrumb-item"><%= link_to "Abonnements", subscription_path %></li>
-      <li class="breadcrumb-item active" aria-current="page">Produit</li>
+      <li class="breadcrumb-item"><%= link_to t("subscriptions"), subscription_path %></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @item.title %></li>
     </ol>
   </nav>
 </div>
@@ -20,7 +20,7 @@
         <%end%>
       </div>
       <div class="col-md-7 my-2">
-        <h5 class="mt-4">Abonnement <%= @item.sub_category.duration %> mois</h5>
+        <h5 class="mt-4"><%= t "subscriptions" %> <%= @item.sub_category.duration %> <%= t "month" %></h5>
         <hr class="hr-product my-4">
         <p class="mb-2 text-muted text-uppercase small"><%= @item.title %></p>
         <ul class="rating">
@@ -46,11 +46,11 @@
           <table class="table table-sm table-borderless mb-0">
             <tbody>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Taille</strong></th>
+                <th class="pl-0 w-25" scope="row"><strong><%= t "size" %></strong></th>
                 <td><%= @item.size %></td>
               </tr>
               <tr>
-                <th class="pl-0 w-25" scope="row"><strong>Durée</strong></th>
+                <th class="pl-0 w-25" scope="row"><strong><%= t "duration" %></strong></th>
 
                 <% items = Item.where(title: @item.title, sub_type: @item.sub_type)%>
                 <% items.each do |item| %>
@@ -71,12 +71,12 @@
         <hr>
         <% if user_signed_in? %>      
           <% if current_user.cart.items.first %> 
-            Un Produit est déjà dans votre panier
+            <%= t "already_into_cart" %>
           <% else %>
-            <%= link_to item_item_carts_path(@item), class:"btn btn-primary btn-md mr-1 mb-2" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span>Ajouter au panier<% end %>      
+            <%= link_to item_item_carts_path(@item), method: "POST", class:"btn btn-primary btn-md mr-1 mb-2" do %><span class="fas fa-shopping-cart ml-2 mr-2"></span><%= t "atc" %><% end %>      
           <% end %> 
         <% else %>
-          <%= link_to 'Merci de vous vous connecter si vous voulez ajouter celci a votre panier.', new_user_session_path %>
+          <%= link_to t("verif_atc"), new_user_session_path %>
         <% end %>
       </div>
     </div>
