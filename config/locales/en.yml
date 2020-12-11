@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  remember_me: "Remember me"
   title_big_banner: "Harry Cover comes to your home!"
   text_big_banner: "Your greengrocer in Paris 7th. Fresh fruits and vegetables every week or every month!"
   title_card_price: "Our popular subscriptions"
@@ -192,3 +193,4 @@ en:
   zip_code: "Zip code:"
   complete_profile: "Complete your profile"
   pay_now: "Pay now"
+  current_password: "Current password"

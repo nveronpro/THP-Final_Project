@@ -1,27 +1,27 @@
 <div id="signin-form">
   <div class="container justify-content-center">
     <div class="row text-center">
-      <div class="col-md-6 offset-md-3"-->
+      <div class="col-md-6 offset-md-3">
         <div class="form-signin my-5">
-          <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
+          <h1 class="h3 mb-3 font-weight-normal"><%= t "log_in" %></h1>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email"  %>
             </div>
 
             <div class="form-group">
-              <%= f.password_field :password, autofocus: true, autocomplete: "current-password", class: "form-control", placeholder: "Current-password" %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "current-password", class: "form-control", placeholder: t("current_password") %>
             </div>
 
             <% if devise_mapping.rememberable? %>
               <div class="checkbox mb-3">
                 <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
+                <%= f.label t("remember_me") %>
               </div>
             <% end %>
 
             <div class="actions">
-              <%= f.submit "Se connecter", class: "btn btn-primary btn-block" %>
+              <%= f.submit t("log_in"), class: "btn btn-primary btn-block" %>
             </div>
           <% end %><br>
 

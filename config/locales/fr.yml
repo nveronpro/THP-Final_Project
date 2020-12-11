@@ -137,7 +137,7 @@ fr:
   click_here: "cliquer ici"
   unsubscribe_email: "Si vous ne souhaitez plus recevoir d'emails de la part de Harry Cover ou si votre adresse email à changé, veuillez"
   last_name: "Nom"
-  service_html: "Current</i>orders"
+  service_html: "Commandes</i> en cours"
   subs_of: "Abonnements de"
   date_from: "Du"
   date_to: "au"
@@ -160,3 +160,4 @@ fr:
   zip_code: "Code postale :"
   complete_profile: "Complétez votre profile"
   pay_now: "Payer maintenant"
+  current_password: "Votre mot de passe"
