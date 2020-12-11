@@ -28,5 +28,5 @@ class ItemCartsController < ApplicationController
 
   def find_item
     @item = Item.friendly.find(params[:id])
-end
+  end
 end
