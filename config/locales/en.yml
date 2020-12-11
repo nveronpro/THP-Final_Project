@@ -177,7 +177,7 @@ en:
   cart: "Cart"
   delete_product: "Remove product"
   scheduled_delivery: "Scheduled delivery:"
-  delivery_in_cart: "Every first Wednesday of the month for the monthly aboonements. Every Wednesday for weekly subscriptions."
+  delivery_in_carts: "Every first Wednesday of the month for the monthly aboonements. Every Wednesday for weekly subscriptions."
   we_accept: "We accept"
   total: "Total amount"
   subtotal: "Subtotal"
@@ -215,3 +215,4 @@ en:
   product_atc: "Product added to cart"
   product_atc_fail: "Product not added"
   order_created: "Your order has been created"
+  past_orders_html: "Past</i>orders"

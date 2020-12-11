@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default from: '	Do-not-reply@yopmail.com '
+  default from: ' monthlee@yopmail.com '
 
   def order_email(order)
     @order = order 
