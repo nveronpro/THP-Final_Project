@@ -167,7 +167,7 @@ fr:
   min_chara: "caractères minimums"
   password: "Mot de passe"
   confirm_password: "Confirmer votre mot de passe"
-  change_password: "Changer votre mote de passe"
+  change_password: "Changer votre mot de passe"
   waiting_confirm: "En attente de confirmation pour :"
   leave_blank: "laisser en blanc si vous ne voulez pas le changer"
   confirm_edit: "Confirmer votre modification"

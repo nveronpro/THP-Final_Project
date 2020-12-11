@@ -12,7 +12,7 @@ class CheckoutController < ApplicationController
         payment_method_types: ['card'],      
         line_items: [{          
           price: @cart.items.first.price_id,
-          quantity: 1,             
+          quantity: 1                       
         }],
         mode: 'subscription',
         success_url: checkout_success_url,
