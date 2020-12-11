@@ -95,7 +95,11 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+<<<<<<< HEAD
 A person visits the personal website Monthlee has created for the small business. When the visitor finds a subscription they would like to purchase, they signup (or log in if they have already done so) to add the desired subscription to their cart, add their payment details, and voila! They eagerly wait for their weekly or monthly subscription.
+=======
+A person visits the personal website Monthlee has created for the small business. When the visitor finds a subscription they would like to purchase, they signup (or log in if they have already done so) to add the desired subscription to their cart, add their payment details, and voila! They eagerly wait for their weekly or monthly subscription. 
+>>>>>>> d85c72adabee33ed8933051042e9df5ba0895dcb
 
 <!-- LICENSE -->
 ## License
