@@ -69,12 +69,12 @@ To get a local copy up and running follow these simple example steps.
 
 2. Create your database
    ```sh
-   Rails db:create
+   rails db:create
    ```
 
 3. Bundle install
    ```sh
-   Bundle install
+   bundle install
    ```
 
 4. Migrate all the migrations
@@ -95,7 +95,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-...
+A person visits the personal website Monthlee has created for the small business. When the visitor finds a subscription they would like to purchase, they signup (or log in if they have already done so) to add the desired subscription to their cart, add their payment details, and voila! They eagerly wait for their weekly or monthly subscription.
 
 <!-- LICENSE -->
 ## License
