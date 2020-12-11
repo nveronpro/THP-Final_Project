@@ -1,5 +1,6 @@
 class ItemCartsController < ApplicationController
-  before_action :find_item, only: [:create, :destroy]
+  before_action :find_item, only: [:destroy]
+  before_action :find_item_spe, only: [:create]
     
   def create
     return if current_user.cart.items.first
@@ -21,7 +22,11 @@ class ItemCartsController < ApplicationController
 
   private 
 
-  def find_item
-      @item = Item.friendly.find(params[:id])
+  def find_item_spe
+      @item = Item.friendly.find(params[:item_id])
   end
+
+  def find_item
+    @item = Item.friendly.find(params[:id])
+end
 end
