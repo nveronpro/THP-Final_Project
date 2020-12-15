@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/information', to: 'static_pages#info'
   get '/subscription', to: 'items#index'
-  
+
   scope '/checkout' do
     resource :checkout, only: [:create], as: 'checkout_create', path: 'create', to: 'checkout#create'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
