@@ -216,3 +216,8 @@ en:
   product_atc_fail: "Product not added"
   order_created: "Your order has been created"
   past_orders_html: "Past</i>orders"
+  concept_card_title: "Receive a basket of the freshest fruits and vegetables delivered every month"
+  concept_card_phrase_1: "I choose the size of my basket: 450g, 750g, 1k"
+  concept_card_phrase_2: "How often: Once a week or once a month"
+  concept_card_phrase_3: "For how long: 3, 6, 9 or 12 months"
+  concept_card_phrase_4: "Harry Cover chooses the freshest produce and delivers it to me"
