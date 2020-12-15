@@ -2726,6 +2726,18 @@ fieldset:disabled a.btn {
     border-color: #31572cc5;
 }
 
+.btn-cta {
+    color: #fff;
+    background-color: #2F2723;
+    border-color: #2F2723;    
+}
+
+.btn-cta:hover {
+    color: #fff;
+    background-color: #3b322de8;
+    border-color: #3b322de8;    
+}
+
 .btn-primary:focus,
 .btn-primary.focus {
     color: #fff;
