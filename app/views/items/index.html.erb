@@ -1,48 +1,22 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3 p-5">
-            <div class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action active" id="list-all-list" data-toggle="list" href="#list-all" role="tab" aria-controls="all">Tous nos abonnements</a>
-            <a class="list-group-item list-group-item-action" id="list-hebdo-list" data-toggle="list" href="#list-hebdo" role="tab" aria-controls="hebdo">Hebdomadaire</a>
-            <a class="list-group-item list-group-item-action" id="list-mensu-list" data-toggle="list" href="#list-mensu" role="tab" aria-controls="mensu">Mensuel</a>
+            <div class="list-group mb-5" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-hebdo-list" data-toggle="list" href="#list-hebdo" role="tab" aria-controls="hebdo">Hebdomadaire</a>
+                <a class="list-group-item list-group-item-action" id="list-mensu-list" data-toggle="list" href="#list-mensu" role="tab" aria-controls="mensu">Mensuel</a>
+            </div>
+            <div class="col-md-12 bg-primary p-3">
+                <div class="text-white">Explication</div>
+            </div>
+            <div class="col-md-12 mb-5 bg-white p-3">
+                <p>
+                    It's a panier chosen by Harry Cover and each time its different.
+                </p>
             </div>
         </div>
         <div class="col-md-9 p-5">
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-all" role="tabpanel" aria-labelledby="list-all-list">
-                    <% category = SubCategory.first %>
-                    <div class="card text-center mb-5">
-                        <div class="card-body">
-                            <h5 class="card-title">Voici toutes nos offres</h5>
-                            <% category.items.each_slice(3) do |items| %>
-                                <div class="card-deck mb-5">
-                                    <% items.each do |item| %>
-                                        <div class="card">
-                                            <%if item.avatar.attached?%>
-                                                <%= image_tag item.avatar, alt: 'avatar', class: "card-img-index" %>
-                                            <%else%>
-                                                <%= image_tag("default.jpg", class:"card-img-index") %>
-                                            <%end%>
-                                            <div class="card-body">
-                                                <h5 class="card-title"><%= item.title %></h5>
-                                                <p class="card-text">À partir de <%= item.price %>€</p>
-                                            <% if item.sub_type == SubType.first %>
-                                                <p class="card-text">Recevez chaque semaine un panier de <%= item.size %></p>
-                                                <p class="card-text">Quatre paniers par mois</p>
-                                            <% else %>
-                                                <p class="card-text">Recevez chaque mois un panier de <%= item.size %></p>
-                                                <p class="card-text">Un panier par mois</p>
-                                            <% end %>
-                                                <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
-                                            </div>
-                                        </div>
-                                    <% end %>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="list-hebdo" role="tabpanel" aria-labelledby="list-hebdo-list">
+                <div class="tab-pane fade show active" id="list-hebdo" role="tabpanel" aria-labelledby="list-hebdo-list">
                     <% category = SubCategory.first %>
                     <div class="card text-center mb-5">
                         <div class="card-body">
