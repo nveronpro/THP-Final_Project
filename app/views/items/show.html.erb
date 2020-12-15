@@ -5,7 +5,7 @@
         <%= link_to t("home"), root_path %>
       </li>
       <li class="breadcrumb-item"><%= link_to t("subscriptions"), subscription_path %></li>
-      <li class="breadcrumb-item active" aria-current="page"><%= @item.title %></li>
+      <li class="breadcrumb-item active" aria-current="page">Panier <%= @item.title %></li>
     </ol>
   </nav>
 </div>
@@ -22,7 +22,7 @@
       <div class="col-md-7 my-2">
         <h5 class="mt-4"><%= t "subscriptions" %>  <%= @item.sub_category.duration %>  <%= t "month" %></h5>
         <hr class="hr-product my-4">
-        <p class="mb-2 text-muted text-uppercase small"><%= @item.title %></p>
+        <p class="mb-2 text-muted text-uppercase small">Panier <%= @item.title %></p>
         <ul class="rating">
           <li class="pr-1">
             <i class="fas fa-star fa-sm text-primary"></i>

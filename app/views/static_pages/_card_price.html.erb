@@ -5,10 +5,9 @@
 
 <div class="container">
   <div class="row">
-
-    <div class="col-md-4 text-center">
+    <div class="col-md-6 text-center">
       <div class="card-deck mb-3">
-        <% item = @items.where(sub_type: SubType.first, sub_category: SubCategory.first)[0]%>
+        <% item = @items.find_by(sub_type: SubType.first, sub_category: SubCategory.first)%>
         <div class="card mb-4 shadow-sm">
           <div class="card-header">
             <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
@@ -27,9 +26,9 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 text-center">
+    <div class="col-md-6 text-center">
       <div class="card mb-4 shadow-sm">
-        <% item = @items.where(sub_type: SubType.last, sub_category: SubCategory.first)[1]%>
+        <% item = @items.find_by(sub_type: SubType.last, sub_category: SubCategory.first)%>
         <div class="card-header">
           <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
         </div>
@@ -43,25 +42,6 @@
             <li><%= t "body5_scd_subscription" %></li>
           </ul>
             <%= link_to t("cta_discover"), item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>          
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 text-center">
-      <div class="card mb-4 shadow-sm">
-        <% item = @items.where(sub_type: SubType.last, sub_category: SubCategory.first)[2]%>
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal"><%= item.title %></h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title"><%= item.price %>€ <small class="text-muted">/ mo</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li><%= t "body1_scd_subscription" %></li>
-            <li><%= t "body2_scd_subscription" %></li>
-            <li><%= t "body3_scd_subscription" %></li>
-            <li><%= t "body4_thrd_subscription" %></li>
-            <li><%= t "body5_scd_subscription" %></li>
-          </ul>
-            <%= link_to t("cta_discover"), item_path(item), class:"btn btn-block btn-primary btn-lg mx-auto"%>        
         </div>
       </div>
     </div>
