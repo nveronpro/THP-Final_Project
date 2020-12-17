@@ -198,3 +198,7 @@ fr:
       - Octobre
       - Novembre
       - Decembre
+  check_our_subscriptions: "Voici nos offres avec abonnements Hebdomadaires"
+  from: "À partir de"
+  receive_basket: "Recevez chaque semaine un panier de"
+  four_baskets: "Quatre paniers par mois"

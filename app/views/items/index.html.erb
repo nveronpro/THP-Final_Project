@@ -20,7 +20,7 @@
                     <% category = SubCategory.first %>
                     <div class="card text-center mb-5">
                         <div class="card-body">
-                            <h5 class="card-title">Voici nos offres avec abonements Hebdomadaires</h5>
+                            <h5 class="card-title"><%= t "check_our_subscriptions" %></h5>
                             <div class="card-deck">
                             <% items = category.items.where(sub_type: SubType.first)%>
                             <% items.each do |item| %>
@@ -31,10 +31,10 @@
                                         <%= image_tag("default.jpg", class:"card-img-index") %>
                                     <%end%>
                                     <div class="card-body">
-                                        <h5 class="card-title">Panier <%= item.title %></h5>
-                                        <p class="card-text">À partir de <%= item.price %>€</p>
-                                        <p class="card-text">Recevez chaque semaine un panier de <%= item.size %></p>
-                                        <p class="card-text">Quatre paniers par mois</p>
+                                        <h5 class="card-title"><%= t "cart" %> <%= item.title %></h5>
+                                        <p class="card-text"><%= t "from" %> <%= item.price %>€</p>
+                                        <p class="card-text"><%= t "receive_basket" %> <%= item.size %></p>
+                                        <p class="card-text"><%= t "four_baskets" %></p>
                                         <%= link_to "Voir plus", item_path(item) , class:"btn btn-primary stretched-link" %>
                                     </div>
                                 </div>
